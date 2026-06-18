@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // ── 2枚目：TRYOUT / EXPERIENCE
       eyebrow  : 'JOIN THE TEAM / 無料体験会・見学 随時受付中',
       h1       : 'その熱量を、<br>コートで<span class="accent">試せ。</span>',
-      btnText  : '体験に申し込む',
+      btnText  : '無料体験',
       btnHref  : 'https://lin.ee/4VsUYfm',
       btnTarget: '_blank',
       meta: [],
