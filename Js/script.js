@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // ── 1枚目：HOME
       eyebrow  : 'OITA CITY / U15 BASKETBALL TEAM',
       h1       : '本気で、<br><span class="accent">COMMIT.</span>',
-      lede     : '大分から全国へ。U15世代の本気のバスケットボールがここにある。',
+      lede     : '大分から全国へ。U15世代の本気がここにある。',
       btnText  : '',
       btnHref  : '',
       btnTarget: '',
