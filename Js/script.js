@@ -39,13 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
       // ── 1枚目：HOME
       eyebrow  : 'OITA CITY / U15 BASKETBALL TEAM',
       h1       : '本気で、<br><span class="accent">COMMIT.</span>',
-      btnText  : 'チームを知る',
-      btnHref  : '#about',
+      btnText  : '',
+      btnHref  : '',
       btnTarget: '',
-      meta: [
-        { num: 'U-15',   label: '対象 中学1〜3年生' },
-        { num: '@deers', label: 'Instagramで日々発信中' }
-      ],
+      meta: [],
       xlSrc    : 'assets/team-4.png',
       xlLabel  : 'ON COURT',
       bgRotA   : '0deg',
@@ -59,10 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
       btnText  : '体験に申し込む',
       btnHref  : 'https://lin.ee/4VsUYfm',
       btnTarget: '_blank',
-      meta: [
-        { num: '¥0', label: '体験参加費 無料' },
-        { num: '随時', label: '受付中' }
-      ],
+      meta: [],
       xlSrc    : 'assets/team-3.png',
       xlLabel  : 'TRY OUT',
       bgRotA   : '38deg',
@@ -76,10 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       btnText  : 'スポンサー募集について',
       btnHref  : 'https://lin.ee/4VsUYfm',
       btnTarget: '_blank',
-      meta: [
-        { num: 'WEB', label: '公式サイトへの掲載' },
-        { num: 'SNS', label: 'Instagramでのご紹介' }
-      ],
+      meta: [],
       xlSrc    : 'assets/team-2.png',
       xlLabel  : 'PARTNERS',
       bgRotA   : '-22deg',
@@ -172,7 +163,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(function () {
       if (dynEyebrow) dynEyebrow.textContent = data.eyebrow;
-      if (dynH1)      dynH1.innerHTML = data.h1;
+      if (dynH1) {
+        dynH1.innerHTML = data.h1;
+        dynH1.classList.remove('h1-anim');
+        dynH1.setAttribute('data-fast', '');   // スライド切り替え = 速いアニメ
+        void dynH1.offsetWidth; // reflow でアニメリセット
+        dynH1.classList.add('h1-anim');
+      }
 
       if (dynMeta) {
         dynMeta.innerHTML = data.meta.map(function (m) {
@@ -186,6 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dynBtn.href        = data.btnHref;
         dynBtn.target      = data.btnTarget || '';
         dynBtn.rel         = data.btnTarget === '_blank' ? 'noopener noreferrer' : '';
+        dynBtn.parentElement.style.display = data.btnText ? '' : 'none';
       }
 
       heroDyn.classList.remove('is-fading');
@@ -214,9 +212,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // タイマー制御
   // ══════════════════════════════════════════
 
-  // ① 3秒後：slide 0 にいればポップアップを表示
+  // ① 3秒後：slide 0 にいればポップアップを表示、かつ hero-copy アニメーション開始
   setTimeout(function () {
     if (current === 0 && popup) popup.classList.add('is-visible');
+    if (dynH1) dynH1.classList.add('h1-anim');
   }, 3000);
 
   // ② 6秒後：スライドの自動切り替えを開始（6秒ループ）

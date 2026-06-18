@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64">
+  <polygon points="20,10 28,24 12,24" fill="rgba(255,255,255,0.88)"/>
+  <polygon points="20,20 30,38 10,38" fill="rgba(255,255,255,0.88)"/>
+  <rect x="17" y="38" width="6" height="10" fill="rgba(255,255,255,0.65)"/>
+  <text x="44" y="30" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="14" fill="rgba(255,255,255,0.92)" letter-spacing="1.5">BLUE PINE</text>
+  <text x="44" y="47" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,0.52)" letter-spacing="4.5">GROUP</text>
+</svg>
