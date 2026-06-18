@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { num: 'U-15',   label: '対象 中学1〜3年生' },
         { num: '@deers', label: 'Instagramで日々発信中' }
       ],
-      xlSrc    : 'https://images.unsplash.com/photo-1546519638405-a2a913dc9e95?w=500&h=500&fit=crop&q=80',
+      xlSrc    : 'assets/team-4.png',
       xlLabel  : 'ON COURT',
       bgRotA   : '0deg',
       bgRotB   : '0deg',
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { num: '¥0', label: '体験参加費 無料' },
         { num: '随時', label: '受付中' }
       ],
-      xlSrc    : 'https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=500&h=500&fit=crop&q=80',
+      xlSrc    : 'assets/team-3.png',
       xlLabel  : 'TRY OUT',
       bgRotA   : '38deg',
       bgRotB   : '-28deg',
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { num: 'WEB', label: '公式サイトへの掲載' },
         { num: 'SNS', label: 'Instagramでのご紹介' }
       ],
-      xlSrc    : 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=500&h=500&fit=crop&q=80',
+      xlSrc    : 'assets/team-2.png',
       xlLabel  : 'PARTNERS',
       bgRotA   : '-22deg',
       bgRotB   : '48deg',
