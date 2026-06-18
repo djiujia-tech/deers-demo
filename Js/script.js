@@ -289,7 +289,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var cur = 0;
     setInterval(function () {
       photos[cur].classList.remove('is-active');
-      cur = (cur + 1) % photos.length;
+      var next;
+      do { next = Math.floor(Math.random() * photos.length); } while (next === cur);
+      cur = next;
       photos[cur].classList.add('is-active');
     }, 3700 + ci * 500);
   });
