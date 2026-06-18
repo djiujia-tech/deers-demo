@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // ── 1枚目：HOME
       eyebrow  : 'OITA CITY / U15 BASKETBALL TEAM',
       h1       : '本気で、<br><span class="accent">COMMIT.</span>',
+      lede     : '大分から全国へ。U15世代の本気のバスケットボールがここにある。',
       btnText  : '',
       btnHref  : '',
       btnTarget: '',
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // ── 2枚目：TRYOUT / EXPERIENCE
       eyebrow  : 'JOIN THE TEAM / 無料体験会・見学 随時受付中',
       h1       : 'その熱量を、<br>コートで<span class="accent">試せ。</span>',
+      lede     : '無料体験会・見学随時受付中。まずはコートに来てみてください。',
       btnText  : '無料体験',
       btnHref  : 'https://lin.ee/4VsUYfm',
       btnTarget: '_blank',
@@ -67,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // ── 3枚目：PARTNERS / SPONSORS
       eyebrow  : 'TEAM PARTNERS / 応援してくれる最高の仲間たち',
       h1       : '共に、大分から<br><span class="accent">未来へ。</span>',
+      lede     : '地域の未来を担う子どもたちの挑戦を、一緒に支えてください。',
       btnText  : 'スポンサー募集中',
       btnHref  : 'https://lin.ee/4VsUYfm',
       btnTarget: '_blank',
@@ -88,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var heroDyn     = document.getElementById('heroDyn');
   var dynEyebrow  = document.getElementById('dynEyebrow');
   var dynH1       = document.getElementById('dynH1');
+  var dynLede     = document.getElementById('dynLede');
   var dynBtn      = document.getElementById('dynBtn');
   var dynMeta     = document.getElementById('dynMeta');
   var xlPhoto     = document.getElementById('xlPhoto');
@@ -163,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(function () {
       if (dynEyebrow) dynEyebrow.textContent = data.eyebrow;
+      if (dynLede) dynLede.textContent = data.lede || '';
       if (dynH1) {
         dynH1.innerHTML = data.h1;
         dynH1.classList.remove('h1-anim');

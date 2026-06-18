@@ -691,6 +691,12 @@ h3, .h3 {
 .hero-copy .accent { color: var(--amber); }
 .hero-content .lede       { color: rgba(246, 243, 236, .82); margin-top: 18px; }
 
+/* PC のみ表示するサブコピー */
+.hero-lede { display: none; }
+@media (min-width: 769px) {
+  .hero-lede { display: block; font-size: 1rem; max-width: 360px; }
+}
+
 .hero-actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
 
 .hero-meta      { display: flex; gap: 28px; margin-top: 48px; flex-wrap: wrap; }
