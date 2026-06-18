@@ -893,6 +893,12 @@ h3, .h3 {
 }
 
 /* slide circles */
+/* スライド2・3用サークル：SPでは非表示 */
+.slide-circles--sub { display: none; }
+@media (min-width: 769px) {
+  .slide-circles--sub { display: block; }
+}
+
 .slide-circles {
   position: absolute;
   inset: 0;
