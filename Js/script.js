@@ -101,6 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var current     = 0;
   var heroTimer   = null;
 
+  // 初期スライドのlede をセット
+  if (dynLede) dynLede.textContent = slideData[0].lede || '';
+
   // ══════════════════════════════════════════
   // ポップアップ表示・非表示
   // ══════════════════════════════════════════
