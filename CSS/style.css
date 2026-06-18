@@ -1158,7 +1158,8 @@ h3, .h3 {
     width: 100%;
     justify-content: center;
   }
-  .hero-content  { z-index: 1; }
+  /* hero-actionsのabsolute基準をhero-dyn-wrapに変更するためstaticに */
+  .hero-content  { position: static; z-index: 1; }
   .hero-xl       { z-index: 1; }
   .slider-dots   { z-index: 9; }
 
