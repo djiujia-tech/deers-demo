@@ -897,6 +897,23 @@ h3, .h3 {
 .slide-circles--sub { display: none; }
 @media (min-width: 769px) {
   .slide-circles--sub { display: block; }
+
+  /* スライド1の位置を上書きして独自レイアウト */
+  .slide-circles--sub .circle-md {
+    width: 180px; height: 180px;
+    right: 42%; top: 6%;
+    left: auto; bottom: auto;
+  }
+  .slide-circles--sub .circle-sm {
+    width: 130px; height: 130px;
+    left: 36%; bottom: 16%;
+    top: auto; right: auto;
+  }
+  .slide-circles--sub .circle-xs {
+    width: 90px; height: 90px;
+    right: 16%; top: 10%;
+    left: auto; bottom: auto;
+  }
 }
 
 .slide-circles {
