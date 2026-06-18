@@ -1120,6 +1120,16 @@ h3, .h3 {
     padding-left: clamp(40px, 5%, 80px);
     padding-right: 50%;
   }
+  .fv-popup {
+    left: clamp(40px, 5%, 80px);
+    right: auto;
+    bottom: clamp(72px, 9vw, 108px);
+  }
+  .fv-popup a {
+    font-size: 15px;
+    padding: 14px 30px;
+  }
+  .fv-popup::after { display: none; }
   .circle-xl {
     width:  clamp(380px, 36vw, 520px);
     height: clamp(380px, 36vw, 520px);
