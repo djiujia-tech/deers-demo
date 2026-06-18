@@ -1146,6 +1146,9 @@ h3, .h3 {
     padding-top: 28px;
   }
 
+  /* SP: .wrapをヒーロー全高にして bottom:170px の基準を確定 */
+  .hero-dyn-wrap > .wrap { min-height: 100%; position: relative; }
+
   /* SP: ボタンを下部に固定 */
   .hero-actions {
     position: absolute;
