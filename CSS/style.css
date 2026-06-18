@@ -701,7 +701,7 @@ h3, .h3 {
     opacity: 0.88;
     letter-spacing: .12em;
   }
-  .hero-lede { display: block; font-size: 1rem; max-width: 340px; }
+  .hero-lede { display: block; font-size: 1rem; max-width: 400px; }
   /* テキストエリア左側を補強するグラデーション帯 */
   .hero-dyn-wrap::before {
     content: '';
