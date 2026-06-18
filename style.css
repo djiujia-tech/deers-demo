@@ -1,0 +1,1365 @@
+/* ==========================================================================
+   OITA DEERS U15 — Design System
+   Concept: the basketball scoreboard. Navigation reads like game quarters,
+   numerals borrow from the gym scoreboard, sections sit on hardwood and
+   chalk, with amber for the moments that matter (CTA, live recruiting).
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root{
+  /* ---- color tokens ---- */
+  --pine:        #16302A; /* primary brand — jersey green */
+  --pine-light:  #1F4738; /* lighter green, cards on dark */
+  --pine-line:   #2C5B49; /* hairline on dark */
+  --wood:        #C68B4F; /* hardwood court */
+  --wood-dark:   #9C6A37; /* wood shadow/border */
+  --wood-deep:   #7A4F26;
+  --chalk:       #F6F3EC; /* main light bg */
+  --chalk-dim:   #ECE7DA;
+  --ink:         #15211B; /* near-black green text */
+  --ink-soft:    #4B5A53;
+  --amber:       #FFB627; /* scoreboard accent / CTA */
+  --amber-deep:  #E89A0E;
+  --sky:         #AFCBE3; /* short-blue, used sparingly */
+  --white:       #FFFFFF;
+
+  /* ---- type ---- */
+  --f-display: 'Zen Kaku Gothic New', sans-serif;
+  --f-score:   'Anton', sans-serif;
+  --f-body:    'Noto Sans JP', sans-serif;
+
+  /* ---- layout ---- */
+  --maxw: 1120px;
+  --pad: clamp(20px, 5vw, 64px);
+  --radius: 4px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin: 0;
+  background: var(--chalk);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+img{ max-width: 100%; display: block; }
+a{ color: inherit; text-decoration: none; }
+ul{ margin: 0; padding: 0; list-style: none; }
+h1,h2,h3,p{ margin: 0; }
+
+:focus-visible{
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+.wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+
+.eyebrow{
+  font-family: var(--f-score);
+  letter-spacing: .08em;
+  font-size: 13px;
+  color: var(--amber-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.eyebrow::before{
+  content: '';
+  width: 18px; height: 2px;
+  background: var(--amber-deep);
+  display: inline-block;
+}
+
+h1, .h1{
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.25;
+  letter-spacing: -.01em;
+}
+h2, .h2{
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: clamp(26px, 3.4vw, 36px);
+  line-height: 1.3;
+}
+h3, .h3{
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 19px;
+}
+.lede{
+  font-size: 17px;
+  color: var(--ink-soft);
+  max-width: 560px;
+}
+
+/* numerals — scoreboard digits, used for jersey numbers, stats, scores */
+.num{
+  font-family: var(--f-score);
+  font-weight: 400;
+  letter-spacing: .01em;
+}
+
+/* ---- buttons ---- */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 15px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn-primary{
+  background: var(--amber);
+  color: var(--ink);
+}
+.btn-primary:hover{ background: var(--amber-deep); }
+.btn-ghost-light{
+  border-color: rgba(246,243,236,.45);
+  color: var(--chalk);
+}
+.btn-ghost-light:hover{ border-color: var(--chalk); background: rgba(246,243,236,.08); }
+.btn-ghost-dark{
+  border-color: var(--pine);
+  color: var(--pine);
+}
+.btn-ghost-dark:hover{ background: var(--pine); color: var(--chalk); }
+
+/* ==========================================================================
+   Header — the scoreboard nav. Sections are framed as quarters of a game.
+   ========================================================================== */
+.scoreboard-header{
+  position: sticky; top: 0; z-index: 50;
+  background: var(--pine);
+  border-bottom: 3px solid var(--amber);
+}
+.scoreboard-header .wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f-score);
+  color: var(--chalk);
+  font-size: 22px;
+  letter-spacing: .02em;
+}
+.brand .brand-mark{
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--amber);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-score);
+  font-size: 13px;
+  color: var(--amber);
+}
+.brand .brand-sub{
+  display: block;
+  font-family: var(--f-body);
+  font-weight: 500;
+  font-size: 11px;
+  color: rgba(246,243,236,.6);
+  letter-spacing: .04em;
+}
+
+.quarters{
+  display: flex;
+  gap: 4px;
+}
+.quarters a{
+  position: relative;
+  font-family: var(--f-body);
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(246,243,236,.78);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+  border-radius: var(--radius);
+}
+.quarters a .q-tag{
+  font-family: var(--f-score);
+  font-size: 11px;
+  color: var(--amber);
+  letter-spacing: .06em;
+  margin-bottom: 2px;
+}
+.quarters a:hover, .quarters a[aria-current="page"]{
+  background: var(--pine-light);
+  color: var(--chalk);
+}
+.quarters a.is-live .q-tag::after{
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--amber);
+  margin-left: 5px;
+  animation: pulse 1.6s infinite ease-in-out;
+}
+@keyframes pulse{ 0%,100%{ opacity: 1; } 50%{ opacity: .25; } }
+
+.nav-toggle{
+  display: none;
+  background: none;
+  border: 2px solid var(--chalk);
+  color: var(--chalk);
+  border-radius: var(--radius);
+  width: 42px; height: 38px;
+  font-family: var(--f-score);
+  font-size: 12px;
+}
+
+@media (max-width: 860px){
+  .quarters{
+    display: none;
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    background: var(--pine);
+    flex-direction: column;
+    border-bottom: 3px solid var(--amber);
+    padding: 8px;
+  }
+  .quarters.is-open{ display: flex; }
+  .quarters a{ flex-direction: row; gap: 8px; justify-content: flex-start; padding: 14px; }
+  .nav-toggle{ display: inline-flex; align-items: center; justify-content: center; }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero{
+  background: var(--pine);
+  color: var(--chalk);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 10vw, 110px) 0 clamp(70px, 12vw, 130px);
+}
+.hero::before{
+  /* faint three-point arc, court-line motif */
+  content: '';
+  position: absolute;
+  width: 900px; height: 900px;
+  border: 2px solid rgba(246,243,236,.08);
+  border-radius: 50%;
+  right: -420px; top: -380px;
+  /*
+   * CSS Level 4 個別変換プロパティ
+   * rotate   → スライド切り替え時のドラマチック回転（0.9s）
+   * translate → マウスパララックスの微細移動（0.2s）
+   * 同一 transform プロパティに混ぜないことで transition を分離できる
+   */
+  rotate:    var(--bg-rot-a, 0deg);
+  translate: var(--px-a, 0px) var(--py-a, 0px);
+  transition: rotate 0.9s ease, translate 0.2s ease-out;
+}
+.hero::after{
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  border: 2px solid rgba(255,182,39,.12);
+  border-radius: 50%;
+  right: -260px; top: -240px;
+  /* 逆方向パララックスで奥行き感を演出 */
+  rotate:    var(--bg-rot-b, 0deg);
+  translate: var(--px-b, 0px) var(--py-b, 0px);
+  transition: rotate 0.9s ease, translate 0.2s ease-out;
+}
+.hero .wrap{ position: relative; }
+.hero .hero-bg{ position: absolute; inset: 0; z-index: 0; }
+.hero-content{ position: relative; z-index: 1; max-width: 640px; transition: opacity 0.28s ease; }
+.hero-content.is-fading{ opacity: 0; }
+.hero-content .h1{ color: var(--chalk); }
+.hero-content .h1 .accent{ color: var(--amber); }
+.hero-content .lede{ color: rgba(246,243,236,.82); margin-top: 18px; }
+.hero-actions{ display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+.hero-meta{
+  display: flex; gap: 28px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+.hero-meta div{ display: flex; flex-direction: column; }
+.hero-meta .num{ font-size: 30px; color: var(--amber); }
+.hero-meta span{ font-size: 12px; color: rgba(246,243,236,.65); letter-spacing: .03em; }
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+section{ padding: clamp(56px, 9vw, 96px) 0; }
+.section-head{ margin-bottom: 40px; max-width: 640px; }
+.on-wood{ background: var(--wood); color: var(--chalk); }
+.on-pine{ background: var(--pine); color: var(--chalk); }
+.on-wood .eyebrow, .on-pine .eyebrow{ color: var(--amber); }
+.on-wood .eyebrow::before, .on-pine .eyebrow::before{ background: var(--amber); }
+.on-wood h2, .on-pine h2{ color: var(--chalk); }
+.on-wood .lede, .on-pine .lede{ color: rgba(246,243,236,.85); }
+
+/* court-arc divider between sections */
+.arc-divider{
+  height: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.arc-divider svg{ position: absolute; left: 50%; transform: translateX(-50%); top: -1px; }
+
+/* ---- grid / cards ---- */
+.grid{ display: grid; gap: 24px; }
+.grid-3{ grid-template-columns: repeat(3, 1fr); }
+.grid-2{ grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 860px){
+  .grid-3{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px){
+  .grid-3, .grid-2{ grid-template-columns: 1fr; }
+}
+
+.card{
+  background: var(--white);
+  border: 1px solid var(--chalk-dim);
+  border-radius: var(--radius);
+  padding: 28px;
+  color: var(--ink);
+}
+.card-dark{
+  background: var(--pine-light);
+  border: 1px solid var(--pine-line);
+  color: var(--chalk);
+}
+.card .num{ color: var(--wood-dark); font-size: 40px; }
+.card-dark .num{ color: var(--amber); font-size: 40px; }
+
+/* IG-style grid, echoes the team's real feed layout. Tiles use real
+   photos via .photo — swap the <img src> for the team's actual posts. */
+.ig-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.ig-grid .tile{
+  aspect-ratio: 1/1;
+  border-radius: 2px;
+}
+
+/* ---- scoreboard result rows ---- */
+.result-row{
+  display: grid;
+  grid-template-columns: 90px 1fr auto auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--chalk-dim);
+  color: var(--ink);
+}
+.result-row:first-child{ border-top: 1px solid var(--chalk-dim); }
+.result-row .date{ font-size: 13px; color: var(--ink-soft); }
+.result-row .opp{ font-weight: 700; }
+.result-row .score{ font-family: var(--f-score); font-size: 24px; }
+.tag{
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.tag-win{ background: rgba(255,182,39,.18); color: var(--amber-deep); }
+.tag-lose{ background: rgba(21,32,27,.08); color: var(--ink-soft); }
+@media (max-width: 600px){
+  .result-row{ grid-template-columns: 1fr auto; row-gap: 6px; }
+  .result-row .opp{ grid-column: 1 / -1; }
+}
+
+/* ---- stat strip ---- */
+.stat-strip{ display: flex; gap: 0; flex-wrap: wrap; border-top: 1px solid var(--pine-line); border-bottom: 1px solid var(--pine-line); }
+.stat-strip div{ flex: 1; min-width: 140px; padding: 26px 20px; border-right: 1px solid var(--pine-line); }
+.stat-strip div:last-child{ border-right: none; }
+.stat-strip .num{ font-size: 36px; color: var(--amber); display: block; }
+.stat-strip span{ font-size: 13px; color: rgba(246,243,236,.7); }
+
+/* ---- roster ---- */
+.roster-card{
+  background: var(--white);
+  border: 1px solid var(--chalk-dim);
+  text-align: center;
+  padding: 26px 16px;
+  color: var(--ink);
+}
+.roster-card .jersey{
+  width: 64px; height: 64px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--pine);
+  color: var(--amber);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-score);
+  font-size: 22px;
+}
+.roster-card .pos{ font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+/* ---- step flow (real sequence — justified numbering) ---- */
+.steps{ display: flex; flex-direction: column; gap: 0; }
+.step{
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 20px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--chalk-dim);
+}
+.step:last-child{ border-bottom: none; }
+.step .step-num{
+  font-family: var(--f-score);
+  font-size: 34px;
+  color: var(--wood-dark);
+}
+.step h3{ color: var(--ink); }
+
+/* ---- form-like CTA block ---- */
+.cta-block{
+  background: var(--pine);
+  color: var(--chalk);
+  padding: clamp(40px, 7vw, 70px);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.cta-block .h2{ color: var(--chalk); }
+.cta-block .lede{ margin: 14px auto 28px; color: rgba(246,243,236,.85); }
+
+/* ---- sponsor tiers ---- */
+.tier{
+  border: 1px solid var(--chalk-dim);
+  border-top: 4px solid var(--wood);
+  padding: 30px;
+  background: var(--white);
+  color: var(--ink);
+}
+.tier.is-featured{ border-top-color: var(--amber); }
+.tier .price{ font-family: var(--f-score); font-size: 30px; margin: 14px 0 18px; color: var(--pine); }
+.tier ul li{ padding: 8px 0; border-top: 1px dashed var(--chalk-dim); font-size: 14px; }
+.tier ul li:first-child{ border-top: none; }
+
+.sponsor-logos{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.sponsor-logos div{
+  aspect-ratio: 2/1;
+  background: var(--white);
+  border: 1px dashed var(--chalk-dim);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-score);
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: .05em;
+}
+@media (max-width: 600px){ .sponsor-logos{ grid-template-columns: repeat(2, 1fr); } }
+
+/* ==========================================================================
+   Photo treatment — any real photo dropped into a .photo wrapper
+   automatically gets the brand duotone wash, so phone snapshots of
+   varying light/quality still read as one cohesive, designed site.
+   ========================================================================== */
+.photo{
+  position: relative;
+  overflow: hidden;
+  background: var(--pine-light);
+}
+.photo img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.photo::after{
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(155deg, rgba(22,48,42,.82) 0%, rgba(22,48,42,.28) 55%, rgba(255,182,39,.16) 100%);
+  mix-blend-mode: multiply;
+}
+.photo.is-light::after{
+  background: linear-gradient(155deg, rgba(22,48,42,.55) 0%, rgba(22,48,42,.1) 60%, rgba(255,182,39,.1) 100%);
+}
+
+.photo-banner{
+  aspect-ratio: 16/5;
+}
+@media (max-width: 700px){
+  .photo-banner{ aspect-ratio: 4/3; }
+}
+
+/* ---- motion: scroll reveal ---- */
+.reveal{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* hover lift for static cards */
+.card, .tier, .roster-card{
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover, .tier:hover, .roster-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(21,33,27,.1);
+}
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer{
+  background: var(--ink);
+  color: rgba(246,243,236,.7);
+  padding: 56px 0 28px;
+}
+footer .foot-top{
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px;
+  padding-bottom: 32px; border-bottom: 1px solid rgba(246,243,236,.12);
+}
+footer .brand{ color: var(--chalk); }
+footer .foot-links{ display: flex; gap: 40px; flex-wrap: wrap; }
+footer .foot-links h4{ font-family: var(--f-display); font-size: 13px; color: var(--chalk); margin-bottom: 12px; letter-spacing: .04em; }
+footer .foot-links a{ display: block; font-size: 14px; padding: 5px 0; color: rgba(246,243,236,.7); }
+footer .foot-links a:hover{ color: var(--amber); }
+footer .copyright{ font-size: 12px; padding-top: 20px; }
+
+
+/* ============================================================
+   Utility classes (extracted from inline styles)
+   ============================================================ */
+
+/* Spacing */
+.mt-8  { margin-top: 8px; }
+.mt-14 { margin-top: 14px; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
+.mt-40 { margin-top: 40px; }
+
+/* Typography */
+.h3-lg        { font-size: 24px; }
+.lede--narrow { max-width: 480px; }
+.num--pine    { color: var(--pine); }
+.price-unit   { font-size: 14px; font-family: var(--f-body); }
+
+/* Card body text */
+.card-text      { margin-top: 8px;  font-size: 14px; color: var(--ink-soft); }
+.card-dark-text { margin-top: 10px; font-size: 14px; color: rgba(246,243,236,.8); }
+.step-text      { margin-top: 6px;  font-size: 14px; color: var(--ink-soft); }
+
+/* Button spacing */
+.btn-mt { margin-top: 20px; }
+
+/* Hero modifiers */
+.hero--pb70 { padding-bottom: 70px; }
+.hero--pb50 { padding-bottom: 50px; }
+
+/* Section modifiers */
+.section--no-pad { padding-top: 0; padding-bottom: 0; }
+
+/* Result wrappers */
+.result-wrap       { background: rgba(246,243,236,.94); border-radius: 4px; overflow: hidden; }
+.result-wrap-light { background: var(--white, #fff);    border-radius: 4px; overflow: hidden; }
+
+/* Steps block */
+.steps {
+  background: rgba(246,243,236,.95);
+  border-radius: 4px;
+  padding: 8px 28px;
+}
+
+/* Photo banner */
+.photo.photo-banner { border-radius: 4px; }
+
+/* ============================================================
+   Hero slideshow
+   ============================================================ */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.hero-slide.is-active { opacity: 1; }
+.hero-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+.slider-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(246,243,236,.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background .3s, transform .3s;
+}
+.slider-dot.is-active {
+  background: var(--amber);
+  transform: scale(1.3);
+}
+
+/* ==========================================================================
+   PC 専用インタラクション（min-width: 769px）
+   ① プログレスバー化したドットインジケーター
+   ② マウスパララックス（CSS変数は JS が注入、ここではスタイルのみ）
+   ========================================================================== */
+@media (min-width: 769px) {
+
+  /* ① ドットのトランジションに width / height を追加（変形を滑らかに） */
+  .slider-dot {
+    transition: background .3s, width .35s ease, height .35s ease, border-radius .35s ease;
+  }
+
+  /* アクティブドット → 横ライン（プログレスバー台座） */
+  .slider-dot.is-active {
+    width: 40px;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(255, 182, 39, 0.28);
+    transform: none;   /* scale(1.3) をキャンセル */
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 6秒で左→右に伸びるゲージ（::after が塗りつぶしを担う） */
+  .slider-dot.is-active::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--amber);
+    transform-origin: left center;
+    animation: dot-progress 6s linear forwards;
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     PC FV フルワイド展開
+     ① テキストを左側へ、max-width 中央制限を解除
+     ② circle-xl スケールアップ（最大520px）& 右下大胆配置
+     ③ ドットをテキスト左端に揃えてLEFT寄せの重心を統一
+     ══════════════════════════════════════════════════════════ */
+
+  /* ① コンテンツを左端から展開（右50%は circle-xl に明け渡す） */
+  .hero-dyn-wrap > .wrap {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: clamp(40px, 5%, 80px);
+    padding-right: 50%;
+  }
+
+  /* ② circle-xl：36vw（1280px ≈ 460px）にスケール、右端へ1%オーバーして大胆に */
+  .circle-xl {
+    width:  clamp(380px, 36vw, 520px);
+    height: clamp(380px, 36vw, 520px);
+    right: -1%;
+    bottom: -8%;
+  }
+
+  /* ③ ドットをテキスト左端と揃える */
+  .slider-dots {
+    left: clamp(40px, 5%, 80px);
+    transform: none;
+    bottom: 36px;
+    z-index: 9;   /* ticker(6) より上に常に表示 */
+  }
+}
+
+@keyframes dot-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ══════════════════════════════════════════════════════════
+   常時表示レイヤー：hero-dyn-wrap ＋ circle-xl (hero-xl)
+   ══════════════════════════════════════════════════════════ */
+
+/* 常時表示コンテンツ（テキスト・ボタン） */
+.hero-dyn-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-dyn-wrap .wrap {
+  pointer-events: auto;
+}
+
+/* circle-xl を全スライド共通で右下固定 */
+.hero-xl {
+  z-index: 1;
+}
+
+/* xlPhoto：src 差し替え時のクロスフェード */
+.xl-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: contrast(105%) brightness(93%) saturate(1.08);
+  transition: opacity 0.5s ease;
+}
+
+/* ── FV ポップアップ（吹き出し）─ 3秒後にフェードイン ── */
+.fv-popup {
+  position: absolute;
+  right: 6%;
+  bottom: 160px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
+  pointer-events: none;
+}
+.fv-popup.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.fv-popup a {
+  display: inline-flex;
+  align-items: center;
+  background: var(--amber);
+  color: var(--pine);
+  font-family: var(--f-body);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 50px;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  letter-spacing: .03em;
+  text-decoration: none;
+}
+.fv-popup a:hover { background: var(--amber-deep); }
+/* 吹き出しの矢印（下向き） */
+.fv-popup::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 9px solid transparent;
+  border-bottom: none;
+  border-top-color: var(--amber);
+}
+
+@media (max-width: 768px) {
+  /* SP：circle-xl 真上にクリアに浮かせる
+     circle: 110×110px, right:4px, bottom:38px
+     circle top from hero-bottom = 38 + 110 = 148px
+     arrow tip (bottom:-9px) = popup-bottom − 9
+     gap = (popup-bottom − 9) − 148 ≥ 24px → popup-bottom ≥ 181px
+     → 184px で余白 27px を確保 */
+  .fv-popup {
+    right: 4px;
+    bottom: 184px;
+  }
+  /* 矢印をサークル中心に合わせる
+     circle center from hero-right = 4 + 55 = 59px
+     popup right = 4px → arrow center from popup-right = 55px
+     → arrow right = 55 - 9 = 46px */
+  .fv-popup::after {
+    left: auto;
+    transform: none;
+    right: 46px;
+  }
+}
+
+/* ============================================================
+   Placeholder box — replace with photo later
+   ============================================================ */
+.ph-box {
+  background: var(--pine-light);
+  position: relative;
+  overflow: hidden;
+}
+.ph-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0, transparent 28px,
+    rgba(255,255,255,.025) 28px, rgba(255,255,255,.025) 29px
+  );
+}
+
+/* ============================================================
+   Photo strip — 2/3 + 1/3 two-row layout
+   ============================================================ */
+.photo-strip {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 440px;
+  gap: 4px;
+}
+.photo-strip-col {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 4px;
+}
+@media (max-width: 640px) {
+  .photo-strip {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .photo-strip-wide { aspect-ratio: 16/9; }
+  .photo-strip-col {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .photo-strip-col .ph-box { aspect-ratio: 1; }
+}
+
+/* ============================================================
+   Hero — 3スライド構成（各スライドが役割を持つ）
+   ============================================================ */
+
+/* ヒーロー全体をビューポート高さに */
+.hero--slides {
+  padding: 0;
+  min-height: 92vh;
+}
+
+/* 各スライドは絶対位置で重ねる */
+.hero--slides .hero-slide {
+  position: absolute;
+  inset: 0;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Slide 1: モザイクレイアウト ── */
+.slide-mosaic {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3px;
+}
+.mosaic-main { width: 100%; height: 100%; }
+.mosaic-col {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 3px;
+}
+.mosaic-col .ph-box { width: 100%; height: 100%; }
+
+/* ── Slides 2・3: 1枚背景 ── */
+.slide-bg {
+  position: absolute;
+  inset: 0;
+}
+
+/* ── オーバーレイ ── */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    115deg,
+    rgba(22,48,42,.88) 0%,
+    rgba(22,48,42,.60) 55%,
+    rgba(22,48,42,.20) 100%
+  );
+}
+/* スポンサースライドはウッド系のトーン */
+.slide-overlay--wood {
+  background: linear-gradient(
+    115deg,
+    rgba(22,48,42,.92) 0%,
+    rgba(22,48,42,.65) 50%,
+    rgba(198,139,79,.18) 100%
+  );
+}
+
+/* ── スライド内テキスト ── */
+.slide-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: clamp(56px, 10vw, 110px);
+  padding-bottom: clamp(70px, 12vw, 130px);
+}
+
+/* ── モバイル ── */
+@media (max-width: 640px) {
+  .slide-mosaic {
+    grid-template-columns: 1fr;
+  }
+  .mosaic-col { display: none; }
+}
+
+/* ============================================================
+   Slide 1 — 円形写真コラージュ
+   円＝バスケットボールのメタファー。大小の円に選手の表情を入れて
+   空気感を伝える。ballaholic的な動線：写真で引き込んでからテキストへ。
+   ============================================================ */
+
+.slide-circles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  /* スライド切り替え時に微回転するドラマチック演出 */
+  transition: transform 1.2s ease;
+  transform: rotate(var(--circles-rot, 0deg)) scale(var(--circles-scale, 1));
+}
+
+/* 全円に共通 */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  /* 白の細ボーダーでダークグリーン背景との輪郭をシャープに */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* amber のリングをbox-shadowで（overflow:hiddenに消されない） */
+  box-shadow:
+    0 0 0 3px rgba(255,182,39,.22),
+    0 12px 40px rgba(0,0,0,.35);
+}
+
+/* ── サイズ ── */
+.circle-xl  { width: 360px; height: 360px; }
+.circle-lg  { width: 215px; height: 215px; }
+.circle-md  { width: 148px; height: 148px; }
+.circle-md2 { width: 132px; height: 132px; }
+.circle-sm  { width: 92px;  height: 92px;  }
+.circle-sm2 { width: 76px;  height: 76px;  }
+.circle-xs  { width: 56px;  height: 56px;  }
+
+/* ── 配置：右〜中央に散らして、左のテキスト動線を開ける ── */
+.circle-xl  { right:  3%;  bottom: -6%; }
+.circle-lg  { right: 24%;  top:    6%; }
+.circle-md  { right:  0%;  top:   30%; }
+.circle-md2 { left:  52%;  top:    3%; }
+.circle-sm  { left:   6%;  top:   14%; }
+.circle-sm2 { right: 37%;  bottom: 17%; }
+.circle-xs  { left:  30%;  bottom: 12%; }
+
+/* ── フワフワアニメーション（各円がバラバラに動く） ── */
+@keyframes float-a {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(11px); }
+}
+@keyframes float-c {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-8px) scale(1.03); }
+}
+
+.circle-xl  { animation: float-a 8s   ease-in-out infinite; }
+.circle-lg  { animation: float-b 6.5s ease-in-out infinite 0.6s; }
+.circle-md  { animation: float-a 7.5s ease-in-out infinite 1.4s; }
+.circle-md2 { animation: float-c 9s   ease-in-out infinite 0.9s; }
+.circle-sm  { animation: float-b 5.5s ease-in-out infinite 2.1s; }
+.circle-sm2 { animation: float-a 6s   ease-in-out infinite 1.1s; }
+.circle-xs  { animation: float-c 4.8s ease-in-out infinite 1.7s; }
+
+/* ── 円の中のスライドショー写真 ── */
+.c-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  /* DEERSのクールな世界観に馴染ませるフィルター */
+  filter: contrast(105%) brightness(93%) saturate(1.08);
+}
+.c-slide.is-active { opacity: 1; }
+
+/* ── ON COURT ラベル（SP専用） ── */
+.circle-label { display: none; }
+
+/* ── 円スライドのオーバーレイ：左テキスト側を濃く、右写真側は薄く ── */
+.slide-overlay--circles {
+  background: linear-gradient(
+    105deg,
+    rgba(22,48,42,.97) 0%,
+    rgba(22,48,42,.82) 28%,
+    rgba(22,48,42,.42) 58%,
+    rgba(22,48,42,.06) 100%
+  );
+}
+
+/* ── SP（768px以下）：最終最適レイアウト ── */
+@media (max-width: 768px) {
+
+  /* ① 背景グラフィックをほぼ消す */
+  .hero::before { opacity: 0.08; }
+  .hero::after  { opacity: 0.06; }
+
+  /* ② メインの円（circle-xl）以外は非表示 */
+  .circle-lg, .circle-md, .circle-md2,
+  .circle-sm, .circle-sm2, .circle-xs { display: none; }
+
+  /* ③ z-index：テキストを常に最前面へ（popup z-index:10 より上） */
+  .slide-circles  { z-index: 0; }
+  .hero-dyn-wrap  { z-index: 12; }  /* popup(10) より上 */
+  .hero-content   { z-index: 1; }   /* wrap 内での相対順位 */
+  .hero-xl        { z-index: 1; }   /* circle-xl は slide-circles より上 */
+  .slider-dots    { z-index: 9; }   /* ticker(z-index:6) より上 */
+
+  /* ⑧ hero-meta：カラム並びで幅を圧縮→ circle と左右が干渉しない */
+  .hero-meta { flex-direction: column; gap: 12px; }
+
+  /* ④ circle-xl：右下隅に収める（縮小でテキスト干渉を排除）
+     ─────────────────────────────────────────────────
+     right: 4px    → 画面端に自然に寄せる
+     bottom: 38px  → ドット（bottom:10px）との間隔 18px 確保
+     width/height: 110px → 140px の約 79%（左端 = 390-4-110=276px
+                   hero-meta 右端 ≈155px → 余白 121px 確保）
+     ─────────────────────────────────────────────────*/
+  .circle-xl {
+    width: 110px;
+    height: 110px;
+    right: 4px;
+    bottom: 38px;
+    top: auto;
+    left: auto;
+    overflow: hidden;
+  }
+
+  /* ⑤ 写真が丸の中でトリミングされ歪まないよう */
+  .circle-xl .c-slide,
+  .circle-xl img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* ⑥ ON COURT ラベル：サークル底部にグラデーション＋text-shadow */
+  .circle-label {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    padding: 18px 0 7px;
+    text-align: center;
+    font-family: var(--f-score);
+    font-size: 9px;
+    letter-spacing: .13em;
+    color: rgba(255, 255, 255, 0.88);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.52));
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.95);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* ⑦ ドットをサークル直下に移動（近接の原則）
+     ─────────────────────────────────────────────────
+     circle center from right: 4 + 110/2 = 59px
+     dots total width (3×10 + 2×10gap): 50px
+     → right: 59 - 25 = 34px で center が一致
+     bottom: 10px → circle bottom(38) との間に 18px の自然な余白
+     ─────────────────────────────────────────────────*/
+  .slider-dots {
+    bottom: 10px;
+    left: auto;
+    right: 34px;
+    transform: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   HERO TICKER
+   ── Slide 3（スポンサー）でのみフェードイン表示
+   ── ロゴテキストが白モノトーンで無限横スクロール
+   ── ホバー時にアンバーでカラー化
+   ══════════════════════════════════════════════════════════ */
+
+.hero-ticker {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 52px;
+  z-index: 6;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.6s ease, transform 0.55s cubic-bezier(.22,.68,0,1.2);
+  /* 左右端をなめらかにフェード */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image:         linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-ticker.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ── マーキートラック（2セット複製で seamless loop） ── */
+.ticker-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: 100%;
+  animation: ticker-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+/* ホバー中は一時停止 */
+.hero-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── ロゴ各アイテム ── */
+.ticker-item {
+  flex-shrink: 0;
+  padding: 0 32px;
+  white-space: nowrap;
+  font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.5;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease, filter 0.3s ease, color 0.3s ease;
+  cursor: default;
+}
+
+.ticker-item:hover {
+  opacity: 1;
+  filter: none;
+  color: var(--amber);
+}
+
+/* ── セパレーター ── */
+.ticker-sep {
+  flex-shrink: 0;
+  color: rgba(255, 182, 39, 0.35);
+  font-size: 0.38rem;
+  line-height: 1;
+  filter: brightness(0) invert(1);
+  opacity: 0.4;
+  user-select: none;
+}
+
+/* SP：文字サイズ小さめ */
+@media (max-width: 768px) {
+  .hero-ticker { height: 44px; }
+  .ticker-item {
+    font-size: 0.6rem;
+    padding: 0 20px;
+    letter-spacing: 0.15em;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   ABOUT / WHO WE ARE
+   ── 白背景でFV深緑とのコントラストを最大化
+   ── 左テキスト × 右Bento Grid の左右2カラム
+   ══════════════════════════════════════════════════════════ */
+
+.section-about {
+  background: #ffffff;
+  /* section の共通 padding: clamp(56px,9vw,96px) 0 をそのまま使用 */
+}
+
+/* PC：左(5fr) / 右(7fr) の2カラム */
+.about-inner {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(48px, 6vw, 80px);
+  align-items: center;
+}
+
+/* ── テキストブロック ── */
+.about-eyebrow {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.about-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: #ccc;
+  flex-shrink: 0;
+}
+
+.about-heading {
+  font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 5.2vw, 4.8rem);
+  line-height: 1.06;
+  color: #111111;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+.about-body {
+  font-size: 0.875rem;
+  line-height: 1.95;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+/* ── 小統計ストリップ ── */
+.about-stats {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #eee;
+}
+.about-stat-num {
+  display: block;
+  font-family: 'Anton', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: #111;
+}
+.about-stat-label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #aaa;
+  margin-top: 3px;
+}
+
+/* ── 非対称 Bento Grid（3列×2行） ── */
+/*
+  配置イメージ（PC）:
+  +--------+------+----------+
+  |   A    |  B   |          |
+  | 3fr r1 | 2fr  |    C     |
+  +--------+------+  2.5fr   |
+  |      D        |  rows1-2 |
+  | col1-2 r2     |          |
+  +---------------+----------+
+*/
+.bento-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2.5fr;
+  grid-template-rows: 288px 220px;
+  gap: 8px;
+}
+
+.bento-item {
+  overflow: hidden;
+  border-radius: 4px;
+  background: #e8e8e8;
+  position: relative; /* img の absolute fill を受け取る */
+}
+
+.bento-item img {
+  position: absolute; /* コンテナを完全に埋める */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.75s ease;
+}
+.bento-item:hover img { transform: scale(1.055); }
+
+/* セル配置 */
+.bento-item--a { grid-column: 1;     grid-row: 1; }
+.bento-item--b { grid-column: 2;     grid-row: 1; }
+.bento-item--c { grid-column: 3;     grid-row: 1 / 3; }
+.bento-item--d { grid-column: 1 / 3; grid-row: 2; }
+
+/* ── スクロール時間差（.reveal の transition に delay を追加） ── */
+.bento-item--a { transition-delay: 0s; }
+.bento-item--b { transition-delay: 0.12s; }
+.bento-item--c { transition-delay: 0.22s; }
+.bento-item--d { transition-delay: 0.08s; }
+
+/* ── SP：縦1列 + aspect-ratio で統一 ── */
+@media (max-width: 768px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-heading { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+  .about-body    { max-width: 100%; }
+  .about-stats   { gap: 20px; }
+
+  /* bento-grid：PC の固定行高・スパン配置をすべてリセットし
+     aspect-ratio コンテナとして縦1列に自然展開する
+     align-items:start が重要 → stretch との衝突を防ぎ
+     aspect-ratio が正しく高さを決定できる */
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none; /* 288px 220px を完全解除 */
+    gap: 8px;
+    align-items: start;
+  }
+
+  .bento-item--a,
+  .bento-item--b,
+  .bento-item--c,
+  .bento-item--d {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 4 / 3; /* 幅から高さを自動計算 */
+    height: auto;
+    transition-delay: 0s;
+  }
+}
