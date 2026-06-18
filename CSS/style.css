@@ -684,17 +684,19 @@ h3, .h3 {
 .hero-copy {
   font-family: var(--f-display);
   font-weight: 900;
-  font-size: clamp(32px, 5vw, 52px);
-  line-height: 1.25;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.2;
   color: var(--chalk);
 }
 .hero-copy .accent { color: var(--amber); }
 .hero-content .lede       { color: rgba(246, 243, 236, .82); margin-top: 18px; }
 
-/* PC のみ表示するサブコピー */
+/* PC のみ表示：eyebrow・lede */
+.hero-eyebrow,
 .hero-lede { display: none; }
 @media (min-width: 769px) {
-  .hero-lede { display: block; font-size: 1rem; max-width: 360px; }
+  .hero-eyebrow { display: block; }
+  .hero-lede    { display: block; font-size: 1rem; max-width: 420px; }
 }
 
 .hero-actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
