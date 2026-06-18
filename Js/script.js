@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // ── 3枚目：PARTNERS / SPONSORS
       eyebrow  : 'TEAM PARTNERS / 応援してくれる最高の仲間たち',
       h1       : '共に、大分から<br><span class="accent">未来へ。</span>',
-      btnText  : 'スポンサー募集について',
+      btnText  : 'スポンサー募集中',
       btnHref  : 'https://lin.ee/4VsUYfm',
       btnTarget: '_blank',
       meta: [],
