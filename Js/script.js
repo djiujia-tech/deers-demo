@@ -220,19 +220,19 @@ document.addEventListener('DOMContentLoaded', function () {
   // タイマー制御
   // ══════════════════════════════════════════
 
-  // ① 3秒後：slide 0 にいればポップアップを表示、かつ hero-copy アニメーション開始
+  // ① 2秒後：slide 0 にいればポップアップを表示、かつ hero-copy アニメーション開始
   setTimeout(function () {
     if (current === 0 && popup) popup.classList.add('is-visible');
     if (dynH1) dynH1.classList.add('h1-anim');
-  }, 3000);
+  }, 2000);
 
-  // ② 6秒後：スライドの自動切り替えを開始（6秒ループ）
+  // ② 4秒後：スライドの自動切り替えを開始（4秒ループ）
   if (slides.length > 1) {
     setTimeout(function () {
       heroTimer = setInterval(function () {
         goTo((current + 1) % slides.length);
-      }, 6000);
-    }, 6000);
+      }, 4000);
+    }, 4000);
 
     // ③ ドットタップ：タイマークリア＋スライド移動
     dots.forEach(function (dot, i) {
