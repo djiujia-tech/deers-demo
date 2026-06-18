@@ -695,8 +695,23 @@ h3, .h3 {
 .hero-eyebrow,
 .hero-lede { display: none; }
 @media (min-width: 769px) {
-  .hero-eyebrow { display: block; }
-  .hero-lede    { display: block; font-size: 1rem; max-width: 420px; }
+  .hero-eyebrow {
+    display: block;
+    color: var(--amber);
+    opacity: 0.88;
+    letter-spacing: .12em;
+  }
+  .hero-lede { display: block; font-size: 1rem; max-width: 340px; }
+  /* テキストエリア左側を補強するグラデーション帯 */
+  .hero-dyn-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 58%;
+    background: linear-gradient(to right, rgba(10,28,20,0.48) 55%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
 .hero-actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
