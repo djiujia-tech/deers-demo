@@ -492,8 +492,9 @@ h3, .h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/camo.svg') center / 160px 120px repeat;
-  opacity: 0.10;
+  background: url('../assets/camo-img.png') center / 320px auto repeat;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 0;
 }
@@ -1485,8 +1486,9 @@ h3, .h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/camo.svg') center / 160px 120px repeat;
-  opacity: .08;
+  background: url('../assets/camo-img.png') center / 320px auto repeat;
+  opacity: .12;
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 #site-intro.plan-b.is-out {
