@@ -484,28 +484,7 @@ h3, .h3 {
 
 /* ---------- camo overlay ---------- */
 
-/* ユニフォームの迷彩柄をサイトの緑エリアにオーバーレイ */
-
-/* ヒーロー左側カモフラゾーン（PCのみ） */
-.hero-camo-left {
-  display: none;
-}
-@media (min-width: 769px) {
-  .hero-camo-left {
-    display: block;
-    position: absolute;
-    top: 0; left: 0; bottom: 0;
-    width: 52%;
-    z-index: 1;
-    background: url('../assets/camo.svg') left top / 400px 300px repeat;
-    opacity: 0.22;
-    pointer-events: none;
-    mask-image: linear-gradient(to right, black 55%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, black 55%, transparent 100%);
-  }
-}
-
-/* on-pine セクション */
+/* ユニフォームの迷彩柄 ── on-pine セクションのみ、薄くテクスチャとして */
 .on-pine {
   position: relative;
 }
@@ -513,24 +492,12 @@ h3, .h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/camo.svg') center / 400px 300px repeat;
-  opacity: 0.28;
+  background: url('../assets/camo.svg') center / 220px 165px repeat;
+  opacity: 0.10;
   pointer-events: none;
   z-index: 0;
 }
 .on-pine > .wrap { position: relative; z-index: 1; }
-
-/* ヘッダー */
-.scoreboard-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('../assets/camo.svg') center / 400px 300px repeat;
-  opacity: 0.18;
-  pointer-events: none;
-  z-index: 0;
-}
-.scoreboard-header > .wrap { position: relative; z-index: 1; }
 
 /* ---------- header ---------- */
 
