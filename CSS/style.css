@@ -1148,11 +1148,17 @@ h3, .h3 {
   }
   .fv-popup::after { display: none; }
   .circle-xl {
-    width:  clamp(380px, 36vw, 520px);
-    height: clamp(380px, 36vw, 520px);
+    width:  clamp(420px, 42vw, 640px);
+    height: clamp(420px, 42vw, 640px);
     right: -1%;
     bottom: -8%;
   }
+  .circle-lg  { width: clamp(220px, 20vw, 290px); height: clamp(220px, 20vw, 290px); }
+  .circle-md  { width: clamp(160px, 15vw, 210px); height: clamp(160px, 15vw, 210px); }
+  .circle-md2 { width: clamp(140px, 13vw, 180px); height: clamp(140px, 13vw, 180px); }
+  .circle-sm  { width: clamp(100px, 10vw, 130px); height: clamp(100px, 10vw, 130px); }
+  .circle-sm2 { width: clamp(84px,   8vw, 110px); height: clamp(84px,   8vw, 110px); }
+  .circle-xs  { width: clamp(60px,   6vw,  80px); height: clamp(60px,   6vw,  80px); }
   .slider-dots {
     left: clamp(40px, 5%, 80px);
     transform: none;
