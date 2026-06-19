@@ -492,7 +492,7 @@ h3, .h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/camo.svg') center / 120px 90px repeat;
+  background: url('../assets/camo.svg') center / 160px 120px repeat;
   opacity: 0.10;
   pointer-events: none;
   z-index: 0;
@@ -1479,7 +1479,7 @@ h3, .h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/camo.svg') center / 120px 90px repeat;
+  background: url('../assets/camo.svg') center / 160px 120px repeat;
   opacity: .08;
   pointer-events: none;
 }
