@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     siteIntro.classList.add('plan-' + introPlan);
 
     setTimeout(function () { siteIntro.classList.add('logo-in'); }, 100);
-    setTimeout(function () { siteIntro.classList.add('is-out'); }, 2600);
-    setTimeout(function () { siteIntro.style.display = 'none'; }, 3300);
+    setTimeout(function () { siteIntro.classList.add('is-out'); }, 1000);
+    setTimeout(function () { siteIntro.style.display = 'none'; }, 1700);
   }
 
   // ══════════════════════════════════════════
