@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // サイトイントロ
   // URL: ?v=b → 案B（緑×インパクト）、デフォルト → 案A（黒×ミニマル）
   // ══════════════════════════════════════════
-  var siteIntro = document.getElementById('siteIntro');
+  var siteIntro = document.getElementById('site-intro');
   if (siteIntro) {
     var introPlan = (location.search.indexOf('v=b') !== -1) ? 'b' : 'a';
     siteIntro.classList.add('plan-' + introPlan);
