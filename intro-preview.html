@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>イントロ演出 提案 2案 | OITA DEERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pine:  #16302A;
+      --amber: #FFB627;
+      --chalk: #F6F3EC;
+      --ink:   #15211B;
+    }
+
+    body {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      background: #111;
+      color: #fff;
+      min-height: 100dvh;
+    }
+
+    /* ═══════════════════════════════════
+       コントロール画面
+    ═══════════════════════════════════ */
+    .ctrl {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      padding: 40px 24px;
+    }
+
+    .ctrl-title { text-align: center; }
+    .ctrl-title .eyebrow {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .22em;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .ctrl-title h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(28px, 6vw, 48px);
+      letter-spacing: .04em;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 620px;
+    }
+    @media (max-width: 480px) { .cards { grid-template-columns: 1fr; } }
+
+    .card {
+      border-radius: 14px;
+      padding: 28px 22px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform .2s, border-color .2s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: #555; }
+
+    .card-a { background: #0a0a0a; border-color: #2a2a2a; }
+    .card-b { background: var(--pine); border-color: #1f4738; }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .card-a .card-tag { background: #222; color: #888; }
+    .card-b .card-tag { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); }
+
+    .card h2 { font-size: 17px; font-weight: 900; margin-bottom: 8px; letter-spacing: .04em; }
+    .card p  { font-size: 12px; line-height: 1.7; }
+    .card-a p { color: #666; }
+    .card-b p { color: rgba(255,255,255,.5); }
+
+    .card-preview {
+      margin: 20px auto 0;
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-a .card-preview { background: #1a1a1a; }
+    .card-b .card-preview {
+      background: #1f4738;
+      background-image: url('assets/camo.svg');
+      background-size: 80px;
+    }
+    .card-preview img { width: 44px; height: 44px; object-fit: contain; border-radius: 50%; }
+
+    .play-btn {
+      display: block;
+      width: 100%;
+      margin-top: 22px;
+      padding: 11px 0;
+      border-radius: 8px;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: #fff;
+      background: transparent;
+      border: 1px solid #444;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+    .play-btn:hover { background: rgba(255,255,255,.08); border-color: #888; }
+
+    .ctrl-note {
+      font-size: 12px;
+      color: #444;
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════
+       フルスクリーン イントロ オーバーレイ
+    ═══════════════════════════════════ */
+    #intro {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+    }
+    #intro.is-on { pointer-events: auto; }
+
+    /* 案A: フェードのみ */
+    #intro.plan-a {
+      background: #0a0a0a;
+      transition: opacity .5s ease;
+    }
+    #intro.plan-a.is-in  { opacity: 1; }
+    #intro.plan-a.is-out { opacity: 0; }
+
+    /* 案B: 緑 + 迷彩 + スライドアウト */
+    #intro.plan-b {
+      background: var(--pine);
+    }
+    #intro.plan-b::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assets/camo.svg') center / 220px 165px repeat;
+      opacity: .08;
+      pointer-events: none;
+    }
+    #intro.plan-b.is-in {
+      opacity: 1;
+      transition: opacity .4s ease;
+    }
+    #intro.plan-b.is-out {
+      opacity: 1;
+      transform: translateY(-100%);
+      transition: transform .6s cubic-bezier(.76,0,.24,1);
+    }
+
+    /* ロゴ */
+    .intro-logo {
+      width: clamp(130px, 32vw, 200px);
+      height: auto;
+      border-radius: 50%;
+      position: relative; z-index: 1;
+      pointer-events: none;
+    }
+
+    /* 案A: スケールフェード */
+    .plan-a .intro-logo {
+      opacity: 0;
+      transform: scale(.86);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .plan-a.logo-in .intro-logo {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* 案B: 下から浮き上がり */
+    .plan-b .intro-logo {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.22,.6,.36,1);
+    }
+    .plan-b.logo-in .intro-logo {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 案B サブテキスト */
+    .intro-sub {
+      display: none;
+      margin-top: 16px;
+      font-size: 11px;
+      letter-spacing: .28em;
+      color: rgba(255,255,255,.45);
+      position: relative; z-index: 1;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .5s ease .35s, transform .5s ease .35s;
+    }
+    .plan-b .intro-sub { display: block; }
+    .plan-b.logo-in .intro-sub { opacity: 1; transform: translateY(0); }
+
+    /* 案ラベル */
+    .intro-plan-label {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      letter-spacing: .2em;
+      z-index: 2;
+    }
+    .plan-a .intro-plan-label { color: #333; }
+    .plan-b .intro-plan-label { color: rgba(255,255,255,.2); }
+
+    /* スキップ */
+    .skip-btn {
+      position: absolute;
+      bottom: 28px; right: 28px;
+      font-size: 12px;
+      letter-spacing: .1em;
+      color: rgba(255,255,255,.25);
+      background: none; border: none;
+      cursor: pointer; z-index: 3;
+      transition: color .2s;
+    }
+    .skip-btn:hover { color: rgba(255,255,255,.6); }
+
+    /* 戻り通知 */
+    #notice {
+      position: fixed;
+      bottom: 24px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: #555;
+      opacity: 0;
+      transition: opacity .4s;
+      pointer-events: none;
+    }
+    #notice.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- ─── フルスクリーン イントロ ─── -->
+<div id="intro">
+  <span class="intro-plan-label" id="introPlanLabel"></span>
+  <img src="assets/logo-circle.png" alt="OITA DEERS" class="intro-logo" id="introLogo" />
+  <p class="intro-sub">U15 BASKETBALL / OITA</p>
+  <button class="skip-btn" onclick="endIntro()">SKIP →</button>
+</div>
+
+<!-- ─── コントロール画面 ─── -->
+<div class="ctrl" id="ctrl">
+  <div class="ctrl-title">
+    <span class="eyebrow">OITA DEERS U15 — サイトイントロ演出</span>
+    <h1>提案 2案</h1>
+  </div>
+
+  <div class="cards">
+    <!-- 案A -->
+    <div class="card card-a">
+      <span class="card-tag">案 A</span>
+      <h2>BLACK × MINIMAL</h2>
+      <p>黒背景にロゴがスケールしながらフェードイン。クールで洗練された印象。</p>
+      <div class="card-preview">
+        <img src="assets/logo-circle.png" alt="" />
+      </div>
+      <button class="play-btn" onclick="playIntro('a')">▶ 再生する</button>
+    </div>
+
+    <!-- 案B -->
+    <div class="card card-b">
+      <span class="card-tag">案 B</span>
+      <h2>GREEN × IMPACT</h2>
+      <p>チームカラーの緑背景＋迷彩。ロゴが下から浮き上がり、上にはけていく。</p>
+      <div class="card-preview">
+        <img src="assets/logo-circle.png" alt="" />
+      </div>
+      <button class="play-btn" onclick="playIntro('b')">▶ 再生する</button>
+    </div>
+  </div>
+
+  <p class="ctrl-note">再生後、イントロが終わると自動でこの画面に戻ります</p>
+</div>
+
+<div id="notice">← 戻りました</div>
+
+<script>
+  var overlay = document.getElementById('intro');
+  var notice  = document.getElementById('notice');
+  var label   = document.getElementById('introPlanLabel');
+  var timer   = null;
+
+  function playIntro(plan) {
+    if (timer) { clearTimeout(timer); timer = null; }
+
+    // リセット
+    overlay.className = '';
+    overlay.style.transform = '';
+    void overlay.offsetWidth;
+
+    label.textContent = plan === 'a' ? '案 A — BLACK × MINIMAL' : '案 B — GREEN × IMPACT';
+    overlay.classList.add('plan-' + plan, 'is-on', 'is-in');
+
+    timer = setTimeout(function () {
+      overlay.classList.add('logo-in');
+    }, 80);
+
+    timer = setTimeout(function () {
+      endIntro();
+    }, 2900);
+  }
+
+  function endIntro() {
+    if (timer) { clearTimeout(timer); timer = null; }
+    overlay.classList.add('is-out');
+    timer = setTimeout(function () {
+      overlay.className = '';
+      overlay.style.transform = '';
+      showNotice();
+    }, 700);
+  }
+
+  function showNotice() {
+    notice.classList.add('show');
+    setTimeout(function () { notice.classList.remove('show'); }, 2200);
+  }
+</script>
+
+</body>
+</html>

@@ -47,6 +47,12 @@
     <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
+    <!-- ══ SITE INTRO ══ JS が plan-a / plan-b クラスを付与 -->
+    <div id="siteIntro">
+      <img src="assets/logo-circle.png" alt="OITA DEERS" class="intro-logo" />
+      <p class="intro-sub">U15 BASKETBALL / OITA</p>
+    </div>
+
     <header class="scoreboard-header">
       <div class="wrap">
         <a href="index.html" class="brand">
@@ -81,53 +87,8 @@
        LAYER 0 – SLIDE BACKGROUNDS（フェードで切り替わる）
        ══════════════════════════════════════════════════════ -->
 
-      <!-- Slide 0: 円形コラージュ + 実写背景 -->
+      <!-- Slide 0: 体験申込 -->
       <div class="hero-slide is-active">
-        <div
-          class="slide-bg"
-          style="
-            background-image: url(&quot;assets/team-6.png&quot;);
-            background-size: cover;
-            background-position: center top;
-          "
-        ></div>
-        <div class="slide-overlay"></div>
-        <div class="slide-circles">
-          <div class="circle circle-lg">
-            <img src="assets/team-4.png" alt="" class="c-slide is-active" />
-            <img src="assets/team-3.png" alt="" class="c-slide" />
-            <img src="assets/team-1.png" alt="" class="c-slide" />
-          </div>
-          <div class="circle circle-md">
-            <img src="assets/team-3.png" alt="" class="c-slide is-active" />
-            <img src="assets/team-6.png" alt="" class="c-slide" />
-            <img src="assets/team-2.png" alt="" class="c-slide" />
-          </div>
-          <div class="circle circle-md2">
-            <img src="assets/team-2.png" alt="" class="c-slide is-active" />
-            <img src="assets/team-7.png" alt="" class="c-slide" />
-            <img src="assets/team-5.png" alt="" class="c-slide" />
-          </div>
-          <div class="circle circle-sm">
-            <img src="assets/team-6.png" alt="" class="c-slide is-active" />
-            <img src="assets/team-1.png" alt="" class="c-slide" />
-            <img src="assets/team-4.png" alt="" class="c-slide" />
-          </div>
-          <div class="circle circle-sm2">
-            <img src="assets/team-7.png" alt="" class="c-slide is-active" />
-            <img src="assets/team-2.png" alt="" class="c-slide" />
-            <img src="assets/team-3.png" alt="" class="c-slide" />
-          </div>
-          <div class="circle circle-xs">
-            <img src="assets/team-5.png" alt="" class="c-slide is-active" />
-            <img src="assets/team-1.png" alt="" class="c-slide" />
-          </div>
-        </div>
-        <div class="slide-overlay slide-overlay--circles"></div>
-      </div>
-
-      <!-- Slide 1: 体験申込 -->
-      <div class="hero-slide">
         <div
           class="slide-bg"
           style="
@@ -152,7 +113,7 @@
         </div>
       </div>
 
-      <!-- Slide 2: スポンサー -->
+      <!-- Slide 1: スポンサー -->
       <div class="hero-slide">
         <div
           class="slide-bg"
@@ -200,9 +161,9 @@
       <div class="hero-dyn-wrap">
         <div class="wrap">
           <div class="hero-content" id="heroDyn">
-            <p class="eyebrow hero-eyebrow" id="dynEyebrow">OITA CITY / U15 BASKETBALL TEAM</p>
+            <p class="eyebrow hero-eyebrow" id="dynEyebrow">JOIN THE TEAM / 無料体験会・見学 随時受付中</p>
             <p class="hero-copy" id="dynH1">
-              本気で、<br /><span class="accent">COMMIT.</span>
+              その熱量を、<br />コートで<span class="accent">試せ。</span>
             </p>
             <p class="lede hero-lede" id="dynLede"></p>
             <div class="hero-actions" style="display: none">
@@ -217,8 +178,7 @@
        LAYER 3 – DOTS & POPUP
        ══════════════════════════════════════════════════════ -->
       <div class="slider-dots">
-        <button class="slider-dot is-active" aria-label="チーム紹介"></button>
-        <button class="slider-dot" aria-label="体験会"></button>
+        <button class="slider-dot is-active" aria-label="体験会"></button>
         <button class="slider-dot" aria-label="スポンサー"></button>
       </div>
 

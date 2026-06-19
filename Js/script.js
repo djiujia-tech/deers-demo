@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ══════════════════════════════════════════
+  // サイトイントロ
+  // URL: ?v=b → 案B（緑×インパクト）、デフォルト → 案A（黒×ミニマル）
+  // ══════════════════════════════════════════
+  var siteIntro = document.getElementById('siteIntro');
+  if (siteIntro) {
+    var introPlan = (location.search.indexOf('v=b') !== -1) ? 'b' : 'a';
+    siteIntro.classList.add('plan-' + introPlan);
+
+    setTimeout(function () { siteIntro.classList.add('logo-in'); }, 100);
+    setTimeout(function () { siteIntro.classList.add('is-out'); }, 2600);
+    setTimeout(function () { siteIntro.style.display = 'none'; }, 3300);
+  }
+
+  // ══════════════════════════════════════════
   // ハンバーガーメニュー
   // ══════════════════════════════════════════
   var toggle = document.querySelector('.nav-toggle');
@@ -36,22 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ══════════════════════════════════════════
   var slideData = [
     {
-      // ── 1枚目：HOME
-      eyebrow  : 'OITA CITY / U15 BASKETBALL TEAM',
-      h1       : '本気で、<br><span class="accent">COMMIT.</span>',
-      lede     : '大分から全国へ。U15世代の本気がここにある。',
-      btnText  : '',
-      btnHref  : '',
-      btnTarget: '',
-      meta: [],
-      xlSrc    : 'assets/team-4.png',
-      xlLabel  : 'ON COURT',
-      bgRotA   : '0deg',
-      bgRotB   : '0deg',
-      showPopup: true
-    },
-    {
-      // ── 2枚目：TRYOUT / EXPERIENCE
+      // ── 1枚目：TRYOUT / EXPERIENCE（旧2枚目）
       eyebrow  : 'JOIN THE TEAM / 無料体験会・見学 随時受付中',
       h1       : 'その熱量を、<br>コートで<span class="accent">試せ。</span>',
       lede     : '無料体験会・見学随時受付中。まずはコートに来てみてください。',
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
       showPopup: false
     },
     {
-      // ── 3枚目：PARTNERS / SPONSORS
+      // ── 2枚目：PARTNERS / SPONSORS（旧3枚目）
       eyebrow  : 'TEAM PARTNERS / 応援してくれる最高の仲間たち',
       h1       : '共に、大分から<br><span class="accent">未来へ。</span>',
       lede     : '地域の未来を担う子どもたちの挑戦を、一緒に支えてください。',
@@ -101,8 +100,16 @@ document.addEventListener('DOMContentLoaded', function () {
   var current     = 0;
   var heroTimer   = null;
 
-  // 初期スライドのlede をセット
-  if (dynLede) dynLede.textContent = slideData[0].lede || '';
+  // 初期スライドのコンテンツをセット（slide 0 = 体験申込）
+  if (dynEyebrow) dynEyebrow.textContent = slideData[0].eyebrow;
+  if (dynH1)      dynH1.innerHTML        = slideData[0].h1;
+  if (dynLede)    dynLede.textContent     = slideData[0].lede || '';
+  if (dynBtn && slideData[0].btnText) {
+    dynBtn.textContent = slideData[0].btnText;
+    dynBtn.href        = slideData[0].btnHref;
+    dynBtn.target      = slideData[0].btnTarget || '';
+    dynBtn.parentElement.style.display = '';
+  }
 
   // ══════════════════════════════════════════
   // ポップアップ表示・非表示
@@ -116,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ══════════════════════════════════════════
   function syncTicker(i) {
     if (!ticker) return;
-    if (i === 2) {
+    if (i === 1) {
       ticker.classList.add('is-visible');
       ticker.removeAttribute('aria-hidden');
     } else {
