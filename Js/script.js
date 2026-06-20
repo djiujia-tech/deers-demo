@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ══════════════════════════════════════════
   var siteIntro = document.getElementById('site-intro');
   if (siteIntro) {
-    var introPlan = (location.search.indexOf('v=b') !== -1) ? 'b' : 'a';
+    var introPlan = 'b';
     siteIntro.classList.add('plan-' + introPlan);
 
     setTimeout(function () { siteIntro.classList.add('logo-in'); }, 100);
