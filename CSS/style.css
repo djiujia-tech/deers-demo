@@ -508,8 +508,22 @@ h3, .h3 {
   z-index: 50;
   background: var(--pine);
   border-bottom: 3px solid var(--amber);
+  overflow: hidden;
+}
+.scoreboard-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/camo-img.png') center / 320px auto repeat;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
 }
 .scoreboard-header .wrap {
+  position: relative;
+  z-index: 1;
+}
   display: flex;
   align-items: center;
   justify-content: space-between;
