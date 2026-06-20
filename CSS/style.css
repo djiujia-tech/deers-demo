@@ -1456,11 +1456,13 @@ h3, .h3 {
   background: var(--pine);
   transition: transform .6s cubic-bezier(.76,0,.24,1);
 }
-#site-intro.plan-b::before {
-  content: '';
+.intro-camo {
   position: absolute;
   inset: 0;
-  background: url('../assets/camo-img.png') center / 320px auto repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   opacity: .22;
   mix-blend-mode: screen;
   pointer-events: none;
