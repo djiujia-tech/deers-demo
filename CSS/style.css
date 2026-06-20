@@ -583,7 +583,7 @@ h3, .h3 {
 .card-dark-text { margin-top: 10px; font-size: 14px; color: rgba(246, 243, 236, .8); }
 .step-text      { margin-top: 6px;  font-size: 14px; color: var(--ink-soft); }
 
-.btn-mt            { margin-top: 20px; }
+.btn-mt            { margin-top: 24px; }
 .hero--pb70        { padding-bottom: 70px; }
 .hero--pb50        { padding-bottom: 50px; }
 .section--no-pad   { padding-top: 0; padding-bottom: 0; }
