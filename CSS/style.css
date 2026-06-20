@@ -1076,6 +1076,41 @@ h3, .h3 {
   user-select: none;
 }
 
+/* sponsor ticker (footer前) */
+.sponsor-ticker {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  background: rgba(10, 22, 18, 0.92);
+  border-top: 1px solid rgba(255, 182, 39, 0.45);
+  display: flex;
+  align-items: center;
+}
+/* right fade */
+.sponsor-ticker::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  background: linear-gradient(to right, transparent, rgba(10, 22, 18, 0.92));
+  pointer-events: none;
+  z-index: 2;
+}
+.sponsor-ticker .ticker-label {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+  background: rgba(10, 22, 18, 0.92);
+  padding-right: 4px;
+}
+.sponsor-ticker .ticker-track {
+  animation: ticker-scroll 26s linear infinite;
+}
+.sponsor-ticker:hover .ticker-track { animation-play-state: paused; }
+
 /* PC hero */
 @media (min-width: 769px) {
   .slider-dot {
