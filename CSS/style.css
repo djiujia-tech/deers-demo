@@ -1461,8 +1461,8 @@ h3, .h3 {
   position: absolute;
   inset: 0;
   background: url('../assets/camo-img.png') center / 320px auto repeat;
-  opacity: .18;
-  mix-blend-mode: overlay;
+  opacity: .22;
+  mix-blend-mode: screen;
   pointer-events: none;
 }
 #site-intro.plan-b.is-out {
