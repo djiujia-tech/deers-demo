@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(function () { siteIntro.classList.add('logo-in'); }, 100);
     setTimeout(function () { siteIntro.classList.add('is-out'); }, 1000);
-    setTimeout(function () { siteIntro.style.display = 'none'; }, 1700);
+    setTimeout(function () {
+      siteIntro.style.display = 'none';
+      window.scrollTo(0, 0); // iOS Safari fixed解除後のスクロール位置ズレ対策
+    }, 1700);
   }
 
   // ══════════════════════════════════════════
