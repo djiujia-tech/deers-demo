@@ -1373,30 +1373,55 @@ h3, .h3 {
 .bento-item--c { transition-delay: 0.22s; }
 .bento-item--d { transition-delay: 0.08s; }
 
+/* PC: SP用ヒーロー画像は非表示 */
+.about-sp-hero { display: none; }
+
 @media (max-width: 768px) {
   .about-inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
-  /* SP: 写真を先に、テキストを後に */
-  .bento-grid { order: -1; }
+
+  /* SP: 大画像1枚 → テキスト → 複数枚グリッド */
+  .about-sp-hero {
+    display: block;
+    order: 0;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .about-sp-hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .about-text  { order: 1; }
+  .bento-grid  { order: 2; }
+
   .about-heading { font-size: clamp(2.2rem, 10vw, 3.2rem); }
   .about-body    { max-width: 100%; }
   .about-stats   { gap: 20px; }
 
+  /* SP bento: bento-item--a は sp-hero と同じ画像なので非表示 */
+  .bento-item--a { display: none; }
+
   .bento-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: none;
-    gap: 8px;
+    gap: 6px;
     align-items: start;
   }
-  .bento-item--a,
   .bento-item--b,
-  .bento-item--c,
-  .bento-item--d {
+  .bento-item--c {
     grid-column: auto;
     grid-row: auto;
     aspect-ratio: 4 / 3;
+    height: auto;
+    transition-delay: 0s;
+  }
+  .bento-item--d {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 7;
     height: auto;
     transition-delay: 0s;
   }
