@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var dots        = document.querySelectorAll('.slider-dot');
   var heroDyn     = document.getElementById('heroDyn');
   var dynEyebrow  = document.getElementById('dynEyebrow');
-  var dynH1       = document.getElementById('dynH1');
+  var dynCopy       = document.getElementById('dynCopy');
   var dynLede     = document.getElementById('dynLede');
   var dynBtn      = document.getElementById('dynBtn');
   var dynMeta     = document.getElementById('dynMeta');
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 初期スライドのコンテンツをセット（slide 0 = 体験申込）
   if (dynEyebrow) dynEyebrow.textContent = slideData[0].eyebrow;
-  if (dynH1)      dynH1.innerHTML        = slideData[0].h1;
+  if (dynCopy)      dynCopy.innerHTML        = slideData[0].h1;
   if (dynLede)    dynLede.textContent     = slideData[0].lede || '';
   if (dynBtn && slideData[0].btnText) {
     dynBtn.textContent = slideData[0].btnText;
@@ -173,12 +173,12 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
       if (dynEyebrow) dynEyebrow.textContent = data.eyebrow;
       if (dynLede) dynLede.textContent = data.lede || '';
-      if (dynH1) {
-        dynH1.innerHTML = data.h1;
-        dynH1.classList.remove('hero-anim');
-        dynH1.setAttribute('data-fast', '');   // スライド切り替え = 速いアニメ
-        void dynH1.offsetWidth; // reflow でアニメリセット
-        dynH1.classList.add('hero-anim');
+      if (dynCopy) {
+        dynCopy.innerHTML = data.h1;
+        dynCopy.classList.remove('hero-anim');
+        dynCopy.setAttribute('data-fast', '');   // スライド切り替え = 速いアニメ
+        void dynCopy.offsetWidth; // reflow でアニメリセット
+        dynCopy.classList.add('hero-anim');
       }
 
       if (dynMeta) {
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ① 2秒後：hero-copy アニメーション開始
   setTimeout(function () {
-    if (dynH1) dynH1.classList.add('hero-anim');
+    if (dynCopy) dynCopy.classList.add('hero-anim');
   }, 2000);
 
   // ② 4秒後：スライドの自動切り替えを開始（4秒ループ）
