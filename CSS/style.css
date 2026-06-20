@@ -288,29 +288,28 @@ h3, .h3 {
 .coach-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 .coach-card {
   background: var(--white);
   border: 1px solid var(--chalk-dim);
   border-radius: var(--radius);
   display: flex;
-  gap: 0;
+  flex-direction: column;
   overflow: hidden;
 }
 .coach-photo {
-  flex-shrink: 0;
-  width: 200px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   background: var(--pine);
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 220px;
 }
 .coach-photo svg {
-  width: 70%;
+  width: 55%;
   height: auto;
 }
 .coach-photo-label {
@@ -323,67 +322,71 @@ h3, .h3 {
 }
 .coach-info {
   flex: 1;
-  padding: 28px 32px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 .coach-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 .coach-role {
   font-family: var(--f-score);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.14em;
   background: var(--pine);
   color: var(--amber);
-  padding: 4px 10px;
+  padding: 3px 9px;
   border-radius: 4px;
   flex-shrink: 0;
 }
 .coach-name {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--ink);
 }
 .coach-stats {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   flex-wrap: wrap;
-  padding: 14px 0;
+  padding: 12px 0;
   border-top: 1px solid var(--chalk-dim);
   border-bottom: 1px solid var(--chalk-dim);
 }
 .coach-stat {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 .stat-label {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   letter-spacing: 0.1em;
   color: var(--ink-soft);
   text-transform: uppercase;
 }
 .stat-val {
   font-family: var(--f-score);
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--ink);
   letter-spacing: 0.04em;
 }
 .coach-bio {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   line-height: 1.75;
   color: var(--ink-soft);
 }
 
-@media (max-width: 768px) {
-  .coach-card { flex-direction: column; }
-  .coach-photo { width: 100%; min-height: 160px; }
-  .coach-info { padding: 20px; }
-  .coach-stats { gap: 16px; }
+@media (min-width: 769px) {
+  .coach-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .coach-card {
+    flex: 1 1 240px;
+  }
+  .coach-info { padding: 24px; }
 }
 
 /* roster card */
