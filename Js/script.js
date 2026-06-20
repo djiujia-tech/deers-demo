@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var dynMeta     = document.getElementById('dynMeta');
   var xlPhoto     = document.getElementById('xlPhoto');
   var xlLabel     = document.getElementById('xlLabel');
-  var popup       = document.getElementById('fvPopup');
   var ticker      = document.getElementById('heroTicker');
   var current     = 0;
   var heroTimer   = null;
@@ -109,13 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
     dynBtn.href        = slideData[0].btnHref;
     dynBtn.target      = slideData[0].btnTarget || '';
     dynBtn.parentElement.style.display = '';
-  }
-
-  // ══════════════════════════════════════════
-  // ポップアップ表示・非表示
-  // ══════════════════════════════════════════
-  function hidePopup() {
-    if (popup) popup.classList.remove('is-visible');
   }
 
   // ══════════════════════════════════════════
@@ -220,16 +212,14 @@ document.addEventListener('DOMContentLoaded', function () {
     animateBg(data);
     syncTicker(i);
 
-    if (!data.showPopup) hidePopup();
   }
 
   // ══════════════════════════════════════════
   // タイマー制御
   // ══════════════════════════════════════════
 
-  // ① 2秒後：slide 0 にいればポップアップを表示、かつ hero-copy アニメーション開始
+  // ① 2秒後：hero-copy アニメーション開始
   setTimeout(function () {
-    if (current === 0 && popup) popup.classList.add('is-visible');
     if (dynH1) dynH1.classList.add('h1-anim');
   }, 2000);
 
@@ -250,10 +240,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ④ スクロール 30px でポップアップ消去
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 30) hidePopup();
-  }, { passive: true });
 
   // ══════════════════════════════════════════
   // マウスパララックス（PC専用 / min-width: 769px）
