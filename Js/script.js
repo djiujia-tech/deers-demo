@@ -175,10 +175,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if (dynLede) dynLede.textContent = data.lede || '';
       if (dynH1) {
         dynH1.innerHTML = data.h1;
-        dynH1.classList.remove('h1-anim');
+        dynH1.classList.remove('hero-anim');
         dynH1.setAttribute('data-fast', '');   // スライド切り替え = 速いアニメ
         void dynH1.offsetWidth; // reflow でアニメリセット
-        dynH1.classList.add('h1-anim');
+        dynH1.classList.add('hero-anim');
       }
 
       if (dynMeta) {
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ① 2秒後：hero-copy アニメーション開始
   setTimeout(function () {
-    if (dynH1) dynH1.classList.add('h1-anim');
+    if (dynH1) dynH1.classList.add('hero-anim');
   }, 2000);
 
   // ② 4秒後：スライドの自動切り替えを開始（4秒ループ）

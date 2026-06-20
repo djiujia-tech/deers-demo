@@ -763,18 +763,18 @@ h3, .h3 {
   to   { opacity: 1; transform: translateY(0); }
 }
 /* 初期ロード：ゆっくり（3秒待ってから） */
-.hero-copy.h1-anim {
+.hero-copy.hero-anim {
   animation: h1-rise 0.9s cubic-bezier(0.22, 0.68, 0, 1.2) both;
 }
-.hero-copy.h1-anim .accent {
+.hero-copy.hero-anim .accent {
   display: inline-block;
   animation: h1-rise 0.9s cubic-bezier(0.22, 0.68, 0, 1.2) 0.2s both;
 }
 /* スライド切り替え：速い */
-.hero-copy[data-fast].h1-anim {
+.hero-copy[data-fast].hero-anim {
   animation: h1-rise 0.45s cubic-bezier(0.22, 0.68, 0, 1.2) both;
 }
-.hero-copy[data-fast].h1-anim .accent {
+.hero-copy[data-fast].hero-anim .accent {
   display: inline-block;
   animation: h1-rise 0.45s cubic-bezier(0.22, 0.68, 0, 1.2) 0.12s both;
 }
