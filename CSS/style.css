@@ -1519,6 +1519,9 @@ h3, .h3 {
 /* PC: SP用ヒーロー画像は非表示 */
 .about-sp-hero { display: none; }
 
+/* ボタン出し分け */
+.about-btn--sp { display: none; }
+
 @media (max-width: 768px) {
   .about-inner {
     grid-template-columns: 1fr;
@@ -1538,8 +1541,10 @@ h3, .h3 {
     width: 100%; height: 100%;
     object-fit: cover;
   }
-  .about-text  { order: 1; }
-  .bento-grid  { order: 2; }
+  .about-text    { order: 1; }
+  .bento-grid    { order: 2; }
+  .about-btn--sp { order: 3; display: block; margin-top: 8px; }
+  .about-btn--pc { display: none; }
 
   .about-heading { font-size: clamp(2.2rem, 10vw, 3.2rem); }
   .about-body    { max-width: 100%; }
