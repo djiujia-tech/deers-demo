@@ -223,7 +223,10 @@ h3, .h3 {
   border-radius: var(--radius);
   padding: 28px;
   color: var(--ink);
+  display: flex;
+  flex-direction: column;
 }
+.card .btn { margin-top: auto; }
 .card-dark {
   background: var(--pine-light);
   border: 1px solid var(--pine-line);
