@@ -589,7 +589,8 @@ h3, .h3 {
 .step-text      { margin-top: 6px;  font-size: 14px; color: var(--ink-soft); }
 
 .btn-mt            { margin-top: 24px; }
-.card .btn.btn-mt  { margin-top: auto; }
+.card .card-body   { flex: 1; }
+.card .btn.btn-mt  { margin-top: 24px; }
 .hero--pb70        { padding-bottom: 70px; }
 .hero--pb50        { padding-bottom: 50px; }
 .section--no-pad   { padding-top: 0; padding-bottom: 0; }
