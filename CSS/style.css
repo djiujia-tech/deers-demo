@@ -1146,7 +1146,7 @@ h3, .h3 {
   align-items: center;
   width: max-content;
   height: 100%;
-  animation: ticker-scroll 22s linear infinite;
+  animation: ticker-scroll 15s linear infinite;
   will-change: transform;
 }
 .hero-ticker:hover .ticker-track { animation-play-state: paused; }
@@ -1214,7 +1214,7 @@ h3, .h3 {
   padding-right: 4px;
 }
 .sponsor-ticker .ticker-track {
-  animation: ticker-scroll 26s linear infinite;
+  animation: ticker-scroll 15s linear infinite;
 }
 .sponsor-ticker:hover .ticker-track { animation-play-state: paused; }
 
