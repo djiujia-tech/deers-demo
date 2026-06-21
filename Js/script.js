@@ -226,13 +226,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (dynCopy) dynCopy.classList.add('hero-anim');
   }, 2000);
 
-  // ② 4秒後：スライドの自動切り替えを開始（4秒ループ）
+  // ② 3秒後：スライドの自動切り替えを開始（3秒ループ）
   if (slides.length > 1) {
     setTimeout(function () {
       heroTimer = setInterval(function () {
         goTo((current + 1) % slides.length);
-      }, 4000);
-    }, 4000);
+      }, 3000);
+    }, 3000);
 
     // ③ ドットタップ：タイマークリア＋スライド移動
     dots.forEach(function (dot, i) {
