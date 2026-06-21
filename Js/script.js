@@ -5,16 +5,24 @@ document.addEventListener('DOMContentLoaded', function () {
   // URL: ?v=b → 案B（緑×インパクト）、デフォルト → 案A（黒×ミニマル）
   // ══════════════════════════════════════════
   var siteIntro = document.getElementById('site-intro');
+  var introDelay = 0; // イントロスキップ時はタイマーを即時スタート
   if (siteIntro) {
-    var introPlan = 'b';
-    siteIntro.classList.add('plan-' + introPlan);
-
-    setTimeout(function () { siteIntro.classList.add('logo-in'); }, 100);
-    setTimeout(function () { siteIntro.classList.add('is-out'); }, 1000);
-    setTimeout(function () {
+    if (sessionStorage.getItem('introPlayed')) {
+      // 2回目以降：即非表示
       siteIntro.style.display = 'none';
-      window.scrollTo(0, 0); // iOS Safari fixed解除後のスクロール位置ズレ対策
-    }, 1700);
+    } else {
+      // 初回のみ再生
+      sessionStorage.setItem('introPlayed', '1');
+      introDelay = 1700;
+      var introPlan = 'b';
+      siteIntro.classList.add('plan-' + introPlan);
+      setTimeout(function () { siteIntro.classList.add('logo-in'); }, 100);
+      setTimeout(function () { siteIntro.classList.add('is-out'); }, 1000);
+      setTimeout(function () {
+        siteIntro.style.display = 'none';
+        window.scrollTo(0, 0);
+      }, 1700);
+    }
   }
 
   // ══════════════════════════════════════════
@@ -221,18 +229,18 @@ document.addEventListener('DOMContentLoaded', function () {
   // タイマー制御
   // ══════════════════════════════════════════
 
-  // ① 2秒後：hero-copy アニメーション開始
+  // ① hero-copy アニメーション開始（初回はイントロ後、2回目以降は即時）
   setTimeout(function () {
     if (dynCopy) dynCopy.classList.add('hero-anim');
-  }, 2000);
+  }, introDelay > 0 ? 2000 : 100);
 
-  // ② イントロ終了直後（1.7秒）にスライドタイマースタート（3秒ループ）
+  // ② スライドタイマースタート（初回はイントロ後1.7秒、2回目以降は即時）
   if (slides.length > 1) {
     setTimeout(function () {
       heroTimer = setInterval(function () {
         goTo((current + 1) % slides.length);
       }, 3000);
-    }, 1700);
+    }, introDelay);
 
     // ③ ドットタップ：タイマークリア＋スライド移動
     dots.forEach(function (dot, i) {
