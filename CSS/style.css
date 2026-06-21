@@ -855,6 +855,7 @@ h3, .h3 {
 }
 
 .hero-actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+#dynBtn { min-width: 220px; justify-content: center; }
 
 .hero-meta      { display: flex; gap: 28px; margin-top: 48px; flex-wrap: wrap; }
 .hero-meta div  { display: flex; flex-direction: column; }
