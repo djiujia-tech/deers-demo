@@ -196,8 +196,10 @@ h3, .h3 {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 16px 36px;
+  min-width: 220px;
   border-radius: var(--radius);
   font-family: var(--f-display);
   font-weight: 700;
@@ -855,7 +857,6 @@ h3, .h3 {
 }
 
 .hero-actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
-#dynBtn { min-width: 220px; justify-content: center; }
 
 .hero-meta      { display: flex; gap: 28px; margin-top: 48px; flex-wrap: wrap; }
 .hero-meta div  { display: flex; flex-direction: column; }
