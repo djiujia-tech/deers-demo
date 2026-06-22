@@ -1012,22 +1012,22 @@ h3, .h3 {
 /* スライド2・3用サークル：SPでは非表示 */
 .slide-circles--sub { display: none; }
 @media (min-width: 769px) {
-  .slide-circles--sub { display: block; }
+  .slide-circles--sub { display: block; z-index: 2; }
 
   /* スライド1の位置を上書きして独自レイアウト */
   .slide-circles--sub .circle-md {
-    width: 180px; height: 180px;
-    right: 42%; top: 6%;
+    width: 232px; height: 232px;
+    right: 36%; top: 4%;
     left: auto; bottom: auto;
   }
   .slide-circles--sub .circle-sm {
-    width: 130px; height: 130px;
-    left: 36%; bottom: 16%;
+    width: 168px; height: 168px;
+    left: 40%; bottom: 14%;
     top: auto; right: auto;
   }
   .slide-circles--sub .circle-xs {
-    width: 90px; height: 90px;
-    right: 16%; top: 10%;
+    width: 120px; height: 120px;
+    right: 14%; top: 8%;
     left: auto; bottom: auto;
   }
 }
