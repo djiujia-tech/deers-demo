@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // デコレーティブサークル（slide 0 背景）の独立サイクル
   // .slide-circles 内の各サークルが 3.7〜5.7秒ごとに写真を切り替え
   // ══════════════════════════════════════════
-  document.querySelectorAll('.slide-circles .circle').forEach(function (circle, ci) {
+  document.querySelectorAll('.slide-circles .circle, .hero-sp-a, .hero-sp-b').forEach(function (circle, ci) {
     var photos = circle.querySelectorAll('.c-slide');
     if (photos.length < 2) return;
     var cur = 0;
