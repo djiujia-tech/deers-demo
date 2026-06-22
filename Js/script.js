@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
       do { next = Math.floor(Math.random() * photos.length); } while (next === cur);
       cur = next;
       photos[cur].classList.add('is-active');
-    }, 3700 + ci * 500);
+    }, 2000 + ci * 500);
   });
 
 });
