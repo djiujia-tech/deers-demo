@@ -1051,7 +1051,7 @@ h3, .h3 {
     inset 0 0 0 1px rgba(255, 255, 255, .06);
 }
 
-.circle-xl  { width: 468px; height: 468px; }
+.circle-xl  { width: 360px; height: 360px; }
 .circle-lg  { width: 280px; height: 280px; }
 .circle-md  { width: 192px; height: 192px; }
 .circle-md2 { width: 172px; height: 172px; }
@@ -1257,8 +1257,8 @@ h3, .h3 {
     padding-right: 50%;
   }
   .circle-xl {
-    width:  clamp(544px, 55vw, 832px);
-    height: clamp(544px, 55vw, 832px);
+    width:  clamp(420px, 42vw, 640px);
+    height: clamp(420px, 42vw, 640px);
     right: -1%;
     bottom: -8%;
   }
