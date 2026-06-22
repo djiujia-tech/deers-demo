@@ -444,6 +444,71 @@ h3, .h3 {
 .roster-card h3 { font-size: 15px; }
 .roster-card .pos { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
 
+/* theme section */
+.section-theme {
+  background: var(--pine);
+  padding: 64px 0;
+}
+.section-theme--light {
+  background: var(--chalk);
+}
+.theme-inner {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+.theme-img {
+  flex-shrink: 0;
+  width: 280px;
+}
+.theme-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.theme-text .eyebrow {
+  color: var(--amber);
+}
+.theme-heading {
+  font-family: var(--f-score);
+  font-size: clamp(56px, 8vw, 96px);
+  color: var(--white);
+  line-height: 1;
+  margin: 8px 0 16px;
+  letter-spacing: .04em;
+}
+.section-theme--light .theme-heading {
+  color: var(--pine);
+}
+.theme-body {
+  font-size: 15px;
+  color: rgba(246,243,236,0.7);
+  line-height: 1.8;
+}
+.section-theme--light .theme-body {
+  color: var(--ink-soft);
+}
+@media (max-width: 768px) {
+  .theme-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .theme-img {
+    width: 200px;
+    margin: 0 auto;
+  }
+  .theme-heading {
+    text-align: center;
+  }
+  .theme-body {
+    text-align: center;
+  }
+  .section-theme .eyebrow {
+    text-align: center;
+  }
+}
+
 /* steps */
 .steps {
   display: flex;
