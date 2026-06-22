@@ -402,10 +402,36 @@ h3, .h3 {
   padding: 24px 16px;
   color: var(--ink);
 }
+.roster-card .player-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  background: rgba(21,33,27,0.12);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 2px solid rgba(21,33,27,0.1);
+}
+.roster-card .player-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 110' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='36' r='22' fill='rgba(21,33,27,0.15)'/%3E%3Cpath d='M10 110 Q10 72 50 72 Q90 72 90 110' fill='rgba(21,33,27,0.15)'/%3E%3C/svg%3E") center/70% no-repeat;
+}
+.roster-card .player-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
 .roster-card .jersey {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 16px;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
   border-radius: 50%;
   background: var(--pine);
   color: var(--amber);
@@ -413,8 +439,9 @@ h3, .h3 {
   align-items: center;
   justify-content: center;
   font-family: var(--f-score);
-  font-size: 24px;
+  font-size: 18px;
 }
+.roster-card h3 { font-size: 15px; }
 .roster-card .pos { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
 
 /* steps */
