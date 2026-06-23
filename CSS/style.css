@@ -106,17 +106,6 @@ section {
   color: rgba(246, 243, 236, .85);
 }
 
-.arc-divider {
-  height: 64px;
-  position: relative;
-  overflow: hidden;
-}
-.arc-divider svg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -1px;
-}
 
 .grid   { display: grid; gap: 24px; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
