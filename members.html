@@ -100,8 +100,7 @@
             <li>3x3全国大会 ベスト16</li>
           </ul>
           <p class="coach-bio">大分県のバスケ界を盛り上げるべくU15カテゴリー"OITA DEERS"を立ち上げました。いつかDEERSのOBがプロで活躍する日を目指して活動しています。</p>
-          <div class="accordion-fade"></div>
-          <button class="accordion-btn" aria-expanded="false">経歴を見る <span class="accordion-icon">＋</span></button>
+          <button class="accordion-btn" aria-expanded="false">詳しく見る <span class="accordion-icon">→</span></button>
           <div class="accordion-body" hidden>
             <p class="accordion-label">経歴</p>
             <p class="coach-career">大分市立西の台小学校 → 別府市立別府北部中学校 → 大分県立大分舞鶴高等学校 → 西南学院大学</p>
@@ -219,12 +218,12 @@
       this.setAttribute('aria-expanded', !expanded);
       if (expanded) {
         body.hidden = true;
-        icon.textContent = '＋';
-        this.textContent = 'もっと見る ';
+        icon.textContent = '→';
+        this.textContent = '詳しく見る ';
         this.appendChild(icon);
       } else {
         body.hidden = false;
-        icon.textContent = '－';
+        icon.textContent = '↑';
         this.textContent = '閉じる ';
         this.appendChild(icon);
       }

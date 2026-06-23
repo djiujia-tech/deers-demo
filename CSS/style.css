@@ -457,35 +457,23 @@ h3, .h3 {
   top: 2px;
   color: var(--amber);
 }
-.coach-info { position: relative; }
-.accordion-fade {
-  position: absolute;
-  bottom: 56px;
-  left: 0; right: 0;
-  height: 48px;
-  background: linear-gradient(to bottom, transparent, var(--chalk));
-  pointer-events: none;
-}
 .accordion-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 16px;
+  gap: 6px;
+  margin-top: 20px;
   background: none;
-  border: 1.5px solid var(--amber);
+  border: none;
+  border-bottom: 1.5px solid var(--amber);
   color: var(--amber);
   font-size: 13px;
   font-weight: 700;
-  padding: 7px 18px;
-  border-radius: 4px;
+  padding: 2px 0 3px;
   cursor: pointer;
-  transition: background .2s, color .2s;
+  transition: opacity .2s;
   letter-spacing: .04em;
 }
-.accordion-btn:hover {
-  background: var(--amber);
-  color: var(--white);
-}
+.accordion-btn:hover { opacity: .7; }
 .accordion-icon { font-style: normal; }
 .accordion-body { margin-top: 16px; }
 .accordion-label {
