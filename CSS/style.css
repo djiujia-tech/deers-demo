@@ -463,15 +463,15 @@ h3, .h3 {
   gap: 6px;
   margin-top: 12px;
   background: none;
-  border: 1px solid rgba(246,243,236,0.3);
-  color: var(--chalk);
+  border: 1px solid rgba(27,52,37,0.3);
+  color: var(--pine);
   font-size: 13px;
   padding: 6px 14px;
   border-radius: 4px;
   cursor: pointer;
   transition: background .2s;
 }
-.accordion-btn:hover { background: rgba(246,243,236,0.08); }
+.accordion-btn:hover { background: rgba(27,52,37,0.06); }
 .accordion-icon { font-style: normal; }
 .accordion-body { margin-top: 16px; }
 .accordion-label {
