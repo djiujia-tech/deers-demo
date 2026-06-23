@@ -91,27 +91,21 @@
         <div class="coach-info">
           <div class="coach-header">
             <span class="coach-role">HC</span>
-            <h3 class="coach-name">ヘッドコーチ</h3>
+            <h3 class="coach-name">川井 健太</h3>
           </div>
-          <div class="coach-stats">
-            <div class="coach-stat">
-              <span class="stat-label">年齢</span>
-              <span class="stat-val">-- 歳</span>
-            </div>
-            <div class="coach-stat">
-              <span class="stat-label">バスケ歴</span>
-              <span class="stat-val">-- 年</span>
-            </div>
-            <div class="coach-stat">
-              <span class="stat-label">出身</span>
-              <span class="stat-val">-- 県</span>
-            </div>
-            <div class="coach-stat">
-              <span class="stat-label">得意</span>
-              <span class="stat-val">--</span>
-            </div>
+          <ul class="coach-awards">
+            <li>全国中学校バスケットボール大会 ベスト4</li>
+            <li>インターハイ・ウィンターカップ出場</li>
+            <li>大分県国体少年男子選出</li>
+            <li>3x3全国大会 ベスト16</li>
+          </ul>
+          <p class="coach-bio">大分県のバスケ界を盛り上げるべくU15カテゴリー"OITA DEERS"を立ち上げました。いつかDEERSのOBがプロで活躍する日を目指して活動しています。</p>
+          <button class="accordion-btn" aria-expanded="false">もっと見る <span class="accordion-icon">＋</span></button>
+          <div class="accordion-body" hidden>
+            <p class="accordion-label">経歴</p>
+            <p class="coach-career">大分市立西の台小学校 → 別府市立別府北部中学校 → 大分県立大分舞鶴高等学校 → 西南学院大学</p>
+            <p class="coach-bio">自分自身、両親の助けもあり幼い時からとても恵まれた環境でバスケを学ばせてもらい、貴重な経験を得ることができました。その経験や学んだ知識を次のバスケ界を担う育成年代の子供たちに還元すべくこのチームを設立しました。</p>
           </div>
-          <p class="coach-bio">チーム全体の指導・大会戦略を担当。技術指導だけでなく、選手の自主性を育てる指導を心がけています。</p>
         </div>
       </div>
 
@@ -221,5 +215,26 @@
 </footer>
 
 <script src="Js/script.js"></script>
+<script>
+  document.querySelectorAll('.accordion-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var body = this.nextElementSibling;
+      var icon = this.querySelector('.accordion-icon');
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      if (expanded) {
+        body.hidden = true;
+        icon.textContent = '＋';
+        this.textContent = 'もっと見る ';
+        this.appendChild(icon);
+      } else {
+        body.hidden = false;
+        icon.textContent = '－';
+        this.textContent = '閉じる ';
+        this.appendChild(icon);
+      }
+    });
+  });
+</script>
 </body>
 </html>
