@@ -455,7 +455,7 @@ h3, .h3 {
 }
 .coach-awards li {
   font-size: 13px;
-  color: var(--amber);
+  color: var(--pine);
   font-weight: 700;
   padding-left: 12px;
   position: relative;
@@ -466,6 +466,7 @@ h3, .h3 {
   left: 0;
   font-size: 10px;
   top: 2px;
+  color: var(--amber);
 }
 .accordion-btn {
   display: flex;
