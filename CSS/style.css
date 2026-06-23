@@ -444,6 +444,60 @@ h3, .h3 {
 .roster-card h3 { font-size: 15px; }
 .roster-card .pos { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
 
+/* coach awards & accordion */
+.coach-awards {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.coach-awards li {
+  font-size: 13px;
+  color: var(--amber);
+  font-weight: 700;
+  padding-left: 12px;
+  position: relative;
+}
+.coach-awards li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  font-size: 10px;
+  top: 2px;
+}
+.accordion-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  background: none;
+  border: 1px solid rgba(246,243,236,0.3);
+  color: var(--chalk);
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.accordion-btn:hover { background: rgba(246,243,236,0.08); }
+.accordion-icon { font-style: normal; }
+.accordion-body { margin-top: 16px; }
+.accordion-label {
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--amber);
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+.coach-career {
+  font-size: 13px;
+  color: rgba(246,243,236,0.6);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
 /* theme section */
 .section-theme {
   background: var(--pine);
