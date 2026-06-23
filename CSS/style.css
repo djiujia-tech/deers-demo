@@ -459,6 +459,7 @@ h3, .h3 {
 }
 .accordion-btn {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
   gap: 6px;
   margin-top: 20px;
@@ -485,7 +486,7 @@ h3, .h3 {
 }
 .coach-career {
   font-size: 13px;
-  color: rgba(246,243,236,0.6);
+  color: var(--ink-soft);
   line-height: 1.7;
   margin-bottom: 12px;
 }
