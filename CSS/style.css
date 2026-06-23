@@ -892,6 +892,9 @@ h3, .h3 {
 }
 
 @media (max-width: 860px) {
+  .brand-logo { height: 32px; }
+  .brand-text { font-size: 13px; }
+  .brand .brand-sub { font-size: 8px; }
   .quarters {
     display: none;
     position: absolute;
