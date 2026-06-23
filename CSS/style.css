@@ -803,7 +803,7 @@ h3, .h3 {
   color: var(--amber);
 }
 .brand-logo {
-  height: 36px;
+  height: 44px;
   width: auto;
   display: block;
   filter: brightness(0) invert(1);
