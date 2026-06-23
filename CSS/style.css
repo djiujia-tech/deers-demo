@@ -119,14 +119,43 @@ section {
   .grid-2 { grid-template-columns: 1fr; }
 }
 
-.ig-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+.ig-ticker {
+  overflow: hidden;
+  width: 100%;
+  margin: 40px 0 0;
+  position: relative;
 }
-.ig-grid .tile {
-  aspect-ratio: 1 / 1;
-  border-radius: 2px;
+.ig-ticker::before,
+.ig-ticker::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.ig-ticker::before {
+  left: 0;
+  background: linear-gradient(to right, var(--chalk), transparent);
+}
+.ig-ticker::after {
+  right: 0;
+  background: linear-gradient(to left, var(--chalk), transparent);
+}
+.ig-ticker-track {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  animation: ticker-scroll 30s linear infinite;
+}
+.ig-ticker-track:hover { animation-play-state: paused; }
+.ig-ticker-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 4px;
+  display: block;
 }
 
 /* ---------- module ---------- */
