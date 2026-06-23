@@ -93,18 +93,19 @@
             <span class="coach-role">HC</span>
             <h3 class="coach-name">川井 健太</h3>
           </div>
-          <ul class="coach-awards">
-            <li>全国中学校バスケットボール大会 ベスト4</li>
-            <li>インターハイ・ウィンターカップ出場</li>
-            <li>大分県国体少年男子選出</li>
-            <li>3x3全国大会 ベスト16</li>
-          </ul>
           <p class="coach-bio">大分県のバスケ界を盛り上げるべくU15カテゴリー"OITA DEERS"を立ち上げました。いつかDEERSのOBがプロで活躍する日を目指して活動しています。</p>
           <p class="coach-bio">自分自身、両親の助けもあり幼い時からとても恵まれた環境でバスケを学ばせてもらい、貴重な経験を得ることができました。その経験や学んだ知識を次のバスケ界を担う育成年代の子供たちに還元すべくこのチームを設立しました。</p>
-          <button class="accordion-btn" aria-expanded="false">経歴を見る <span class="accordion-icon">→</span></button>
+          <button class="accordion-btn" aria-expanded="false">経歴・実績を見る <span class="accordion-icon">→</span></button>
           <div class="accordion-body" hidden>
             <p class="accordion-label">経歴</p>
             <p class="coach-career">大分市立西の台小学校 → 別府市立別府北部中学校 → 大分県立大分舞鶴高等学校 → 西南学院大学</p>
+            <p class="accordion-label">実績</p>
+            <ul class="coach-awards">
+              <li>全国中学校バスケットボール大会 ベスト4</li>
+              <li>インターハイ・ウィンターカップ出場</li>
+              <li>大分県国体少年男子選出</li>
+              <li>3x3全国大会 ベスト16</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -219,7 +220,7 @@
       if (expanded) {
         body.hidden = true;
         icon.textContent = '→';
-        this.textContent = '経歴を見る ';
+        this.textContent = '経歴・実績を見る ';
         this.appendChild(icon);
       } else {
         body.hidden = false;
