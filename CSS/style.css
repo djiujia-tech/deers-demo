@@ -806,6 +806,7 @@ h3, .h3 {
   height: 36px;
   width: auto;
   display: block;
+  filter: brightness(0) invert(1);
 }
 /* h1をナビロゴに使う際のリセット */
 .brand-name {
