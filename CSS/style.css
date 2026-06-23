@@ -802,6 +802,11 @@ h3, .h3 {
   font-size: 13px;
   color: var(--amber);
 }
+.brand-logo {
+  height: 36px;
+  width: auto;
+  display: block;
+}
 /* h1をナビロゴに使う際のリセット */
 .brand-name {
   font-size: inherit;
