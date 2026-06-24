@@ -1533,6 +1533,9 @@ h3, .h3 {
   padding-top: max(72px, 12vh);
 }
 .top_hero_dyn-wrap > .l_container { min-height: 100%; position: relative; }
+/* top_hero_content は position:relative を持つので static に戻して
+   top_hero_actions の含有ブロックを l_container にする */
+.top_hero_dyn-wrap .top_hero_content { position: static; }
 .top_hero_dyn-wrap .top_hero_actions {
   position: absolute;
   bottom: 100px;
