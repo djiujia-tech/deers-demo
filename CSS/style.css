@@ -1527,6 +1527,20 @@ h3, .h3 {
 .top_hero::after  { opacity: 0.06; }
 /* ティッカー高さ(90px)分を確保 */
 .top_hero { padding-bottom: 96px; }
+/* モバイル：テキストを中段に、ボタンを FV 底部に固定 */
+.top_hero_dyn-wrap {
+  justify-content: flex-start;
+  padding-top: max(72px, 12vh);
+}
+.top_hero_dyn-wrap > .l_container { min-height: 100%; position: relative; }
+.top_hero_dyn-wrap .top_hero_actions {
+  position: absolute;
+  bottom: 100px;
+  left: var(--pad);
+  right: var(--pad);
+  margin: 0;
+}
+.top_hero_dyn-wrap .top_hero_actions .m_btn { width: 100%; justify-content: center; }
 
 .top_slide-overlay,
 .top_slide-overlay__circles {
@@ -1594,7 +1608,7 @@ h3, .h3 {
   right: var(--pad);
   margin: 0;
 }
-.top_hero_dyn-wrap .top_hero_actions .m_btn { width: 100%; justify-content: center; }
+.top_hero_dyn-wrap .top_hero_actions .m_btn { width: auto; }
 .top_hero_dyn-wrap .top_hero_content { position: static; z-index: 1; }
 .top_hero_xl     { z-index: 1; }
 .top_slider-dots { z-index: 9; }
