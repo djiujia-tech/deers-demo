@@ -1597,7 +1597,7 @@ h3, .h3 {
     justify-content: center;
     padding-top: 0;
   }
-  .top_hero_dyn-wrap > .l_container { min-height: 100%; position: relative; }
+  .top_hero_dyn-wrap > .l_container { min-height: auto; position: static; }
   .top_hero_dyn-wrap .top_hero_actions {
     position: static;
     bottom: auto;
