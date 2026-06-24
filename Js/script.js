@@ -291,13 +291,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var photos = circle.querySelectorAll('.top_c-slide');
     if (photos.length < 2) return;
     var cur = 0;
-    setInterval(function () {
-      photos[cur].classList.remove('is-active');
-      var next;
-      do { next = Math.floor(Math.random() * photos.length); } while (next === cur);
-      cur = next;
-      photos[cur].classList.add('is-active');
-    }, 2000 + ci * 500);
+    setTimeout(function () {
+      setInterval(function () {
+        photos[cur].classList.remove('is-active');
+        var next;
+        do { next = Math.floor(Math.random() * photos.length); } while (next === cur);
+        cur = next;
+        photos[cur].classList.add('is-active');
+      }, 3000);
+    }, ci * 1000);
   });
 
 });
