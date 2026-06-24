@@ -1443,8 +1443,8 @@ h3, .h3 {
     max-width: none;
     margin-left: 0;
     margin-right: 0;
-    padding-left: clamp(80px, 12%, 160px);
-    padding-right: 45%;
+    padding-left: clamp(40px, 5%, 80px);
+    padding-right: 50%;
   }
   .top_hero_dyn-wrap .top_hero_actions {
     position: static;
@@ -1594,8 +1594,8 @@ h3, .h3 {
 @media (min-width: 769px) {
   .top_hero_dyn-wrap {
     z-index: 12;
-    justify-content: flex-start;
-    padding-top: clamp(60px, 8vh, 100px);
+    justify-content: center;
+    padding-top: 0;
   }
   .top_hero_dyn-wrap > .l_container { min-height: 100%; position: relative; }
   .top_hero_dyn-wrap .top_hero_actions {
