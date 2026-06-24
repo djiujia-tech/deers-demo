@@ -250,6 +250,7 @@ h3, .h3 {
   text-align: center;
 }
 .m_card .m_btn { margin-top: auto; }
+.m_card__dark .m_btn { margin-top: 24px; }
 .m_card__dark {
   background: var(--pine-light);
   border: 1px solid var(--pine-line);
