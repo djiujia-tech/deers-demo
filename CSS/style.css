@@ -1621,7 +1621,15 @@ h3, .h3 {
 }
 
 .top_circle__xl {
-  display: none;
+  display: block;
+  width: 110px;
+  height: 110px;
+  right: -25px;
+  bottom: -25px;
+  top: auto;
+  left: auto;
+  overflow: hidden;
+  z-index: 1;
 }
 .top_circle__xl .top_c-slide,
 .top_circle__xl img {
