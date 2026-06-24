@@ -1607,14 +1607,16 @@ h3, .h3 {
   }
   .top_hero_dyn-wrap .top_hero_actions .m_btn {
     width: auto;
-    padding: 24px 72px;
-    font-size: 20px;
-    min-width: 300px;
+    padding: 28px 88px;
+    font-size: 22px;
+    min-width: 340px;
   }
   .top_hero_dyn-wrap .top_hero_content { position: static; z-index: 1; }
   .top_hero_xl     { z-index: 1; }
   .top_slider-dots { z-index: 9; }
   .top_hero_meta   { flex-direction: row; gap: 28px; }
+  /* cascade fix: mobile base sets sp circles to display:block — force hide on PC */
+  .top_hero_sp-a, .top_hero_sp-b { display: none; }
   /* cascade fix: mobile base overrides desktop position for sm2/xs */
   .top_circle__sm2 { left: 37%; bottom: 17%; top: auto; right: auto; }
   .top_circle__xs  { left: 30%; bottom: 12%; top: auto; right: auto; }
