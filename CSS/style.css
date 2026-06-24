@@ -1615,7 +1615,8 @@ h3, .h3 {
   .top_hero_xl     { z-index: 1; }
   .top_slider-dots { z-index: 9; }
   .top_hero_meta   { flex-direction: row; gap: 28px; }
-  /* cascade fix: mobile base sets sp circles to display:block — force hide on PC */
+  /* cascade fix: mobile base overrides display on circles */
+  .top_circle__lg, .top_circle__md, .top_circle__md2, .top_circle__sm { display: block; }
   .top_hero_sp-a, .top_hero_sp-b { display: none; }
   /* cascade fix: mobile base overrides desktop position for sm2/xs */
   .top_circle__sm2 { left: 37%; bottom: 17%; top: auto; right: auto; }
