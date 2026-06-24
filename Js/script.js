@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // ══════════════════════════════════════════
   // ハンバーガーメニュー
   // ══════════════════════════════════════════
-  var toggle = document.querySelector('.nav-toggle');
-  var menu   = document.querySelector('.quarters');
+  var toggle = document.querySelector('.m_hamburger');
+  var menu   = document.querySelector('.l_header-nav');
   if (toggle && menu) {
     toggle.addEventListener('click', function () {
       var isOpen = menu.classList.toggle('is-open');
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ══════════════════════════════════════════
   // スクロールリビール
   // ══════════════════════════════════════════
-  var reveals = document.querySelectorAll('.reveal');
+  var reveals = document.querySelectorAll('.m_reveal');
   if (reveals.length && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       // ── 1枚目：TRYOUT / EXPERIENCE（旧2枚目）
       eyebrow  : 'JOIN THE TEAM / 無料体験会・見学 随時受付中',
-      h1       : 'その熱量を、<br>コートで<span class="accent">試せ。</span>',
+      h1       : 'その熱量を、<br>コートで<span class="m_accent">試せ。</span>',
       lede     : '無料体験会・見学随時受付中。まずはコートに来てみてください。',
       btnText  : '無料体験',
       btnHref  : 'https://lin.ee/4VsUYfm',
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       // ── 2枚目：PARTNERS / SPONSORS（旧3枚目）
       eyebrow  : 'TEAM PARTNERS / 応援してくれる最高の仲間たち',
-      h1       : '共に、大分から<br><span class="accent">未来へ。</span>',
+      h1       : '共に、大分から<br><span class="m_accent">未来へ。</span>',
       lede     : '地域の未来を担う子どもたちの挑戦を、一緒に支えてください。',
       btnText  : 'スポンサー募集中',
       btnHref  : 'https://lin.ee/4VsUYfm',
@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // DOM 参照
   // ══════════════════════════════════════════
   var heroSection = document.getElementById('heroSection');
-  var slides      = document.querySelectorAll('.hero-slide');
-  var dots        = document.querySelectorAll('.slider-dot');
+  var slides      = document.querySelectorAll('.top_hero_slide');
+  var dots        = document.querySelectorAll('.top_slider-dot');
   var heroDyn     = document.getElementById('heroDyn');
   var dynEyebrow  = document.getElementById('dynEyebrow');
   var dynCopy       = document.getElementById('dynCopy');
@@ -183,15 +183,15 @@ document.addEventListener('DOMContentLoaded', function () {
       if (dynLede) dynLede.textContent = data.lede || '';
       if (dynCopy) {
         dynCopy.innerHTML = data.h1;
-        dynCopy.classList.remove('hero-anim');
+        dynCopy.classList.remove('top_hero-anim');
         dynCopy.setAttribute('data-fast', '');   // スライド切り替え = 速いアニメ
         void dynCopy.offsetWidth; // reflow でアニメリセット
-        dynCopy.classList.add('hero-anim');
+        dynCopy.classList.add('top_hero-anim');
       }
 
       if (dynMeta) {
         dynMeta.innerHTML = data.meta.map(function (m) {
-          return '<div><span class="num">' + m.num + '</span>'
+          return '<div><span class="m_num">' + m.num + '</span>'
                + '<span>' + m.label + '</span></div>';
         }).join('');
       }
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ① hero-copy アニメーション開始（初回はイントロ後、2回目以降は即時）
   setTimeout(function () {
-    if (dynCopy) dynCopy.classList.add('hero-anim');
+    if (dynCopy) dynCopy.classList.add('top_hero-anim');
   }, introDelay > 0 ? 2000 : 100);
 
   // ② スライドタイマースタート（初回はイントロ後1.7秒、2回目以降は即時）
@@ -287,8 +287,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // デコレーティブサークル（slide 0 背景）の独立サイクル
   // .slide-circles 内の各サークルが 3.7〜5.7秒ごとに写真を切り替え
   // ══════════════════════════════════════════
-  document.querySelectorAll('.slide-circles .circle, .hero-sp-a, .hero-sp-b').forEach(function (circle, ci) {
-    var photos = circle.querySelectorAll('.c-slide');
+  document.querySelectorAll('.top_slide-circles .top_circle, .top_hero_sp-a, .top_hero_sp-b').forEach(function (circle, ci) {
+    var photos = circle.querySelectorAll('.top_c-slide');
     if (photos.length < 2) return;
     var cur = 0;
     setInterval(function () {
