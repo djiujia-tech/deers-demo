@@ -1802,11 +1802,11 @@ h3, .h3 {
     grid-template-columns: 3fr 2fr 2.5fr;
     grid-template-rows: 288px 220px;
     gap: 8px;
-    align-items: start;
+    align-items: stretch;
   }
-  .top_bento-item__b { grid-column: auto; grid-row: auto; aspect-ratio: auto; height: auto; transition-delay: 0.12s; }
-  .top_bento-item__c { grid-column: 3; grid-row: 1 / 3; aspect-ratio: auto; height: auto; transition-delay: 0.22s; }
-  .top_bento-item__d { grid-column: 1 / 3; grid-row: 2; aspect-ratio: auto; height: auto; transition-delay: 0.08s; }
+  .top_bento-item__b { grid-column: 2; grid-row: 1; aspect-ratio: auto; height: 100%; transition-delay: 0.12s; }
+  .top_bento-item__c { grid-column: 3; grid-row: 1 / 3; aspect-ratio: auto; height: 100%; transition-delay: 0.22s; }
+  .top_bento-item__d { grid-column: 1 / 3; grid-row: 2; aspect-ratio: auto; height: 100%; transition-delay: 0.08s; }
 }
 
 /* ══════════════════════════════════════════
