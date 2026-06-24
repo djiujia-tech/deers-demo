@@ -1459,10 +1459,10 @@ h3, .h3 {
   .top_hero_meta   { flex-direction: row; gap: 28px; }
   /* restore circle xl to large desktop size */
   .top_circle__xl {
-    width:  clamp(620px, 62vw, 900px);
-    height: clamp(620px, 62vw, 900px);
-    right: -2%;
-    bottom: -12%;
+    width:  clamp(800px, 80vw, 1100px);
+    height: clamp(800px, 80vw, 1100px);
+    right: -4%;
+    bottom: -20%;
     top: auto;
     left: auto;
     overflow: visible;
