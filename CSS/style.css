@@ -1619,6 +1619,8 @@ h3, .h3 {
   /* cascade fix: mobile base overrides display on circles */
   .top_circle__lg, .top_circle__md, .top_circle__md2, .top_circle__sm { display: block; }
   .top_hero_sp-a, .top_hero_sp-b { display: none; }
+  /* circles above overlay on PC */
+  .top_slide-circles { z-index: 2; }
   /* cascade fix: mobile base overrides desktop position for sm2/xs */
   .top_circle__sm2 { left: 37%; bottom: 17%; top: auto; right: auto; }
   .top_circle__xs  { left: 30%; bottom: 12%; top: auto; right: auto; }
