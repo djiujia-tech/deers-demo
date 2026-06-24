@@ -1605,7 +1605,12 @@ h3, .h3 {
     right: var(--pad);
     margin: 0;
   }
-  .top_hero_dyn-wrap .top_hero_actions .m_btn { width: auto; }
+  .top_hero_dyn-wrap .top_hero_actions .m_btn {
+    width: auto;
+    padding: 20px 56px;
+    font-size: 18px;
+    min-width: 260px;
+  }
   .top_hero_dyn-wrap .top_hero_content { position: static; z-index: 1; }
   .top_hero_xl     { z-index: 1; }
   .top_slider-dots { z-index: 9; }
