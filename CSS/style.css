@@ -1459,10 +1459,10 @@ h3, .h3 {
   .top_hero_meta   { flex-direction: row; gap: 28px; }
   /* restore circle xl to large desktop size */
   .top_circle__xl {
-    width:  min(120vh, 1300px);
-    height: min(120vh, 1300px);
-    right: -5%;
-    bottom: -15%;
+    width:  clamp(580px, 56vw, 820px);
+    height: clamp(580px, 56vw, 820px);
+    right: -3%;
+    bottom: -10%;
     top: auto;
     left: auto;
     overflow: visible;
@@ -1499,12 +1499,12 @@ h3, .h3 {
   }
 
   /* circle clamp sizes */
-  .top_circle__lg  { width: clamp(288px, 26vw, 376px); height: clamp(288px, 26vw, 376px); }
-  .top_circle__md  { width: clamp(208px, 20vw, 272px); height: clamp(208px, 20vw, 272px); }
-  .top_circle__md2 { width: clamp(184px, 17vw, 232px); height: clamp(184px, 17vw, 232px); }
-  .top_circle__sm  { width: clamp(128px, 13vw, 168px); height: clamp(128px, 13vw, 168px); }
-  .top_circle__sm2 { width: clamp(112px, 10vw, 144px); height: clamp(112px, 10vw, 144px); }
-  .top_circle__xs  { width: clamp(80px,   8vw, 104px); height: clamp(80px,   8vw, 104px); }
+  .top_circle__lg  { width: clamp(360px, 32vw, 480px); height: clamp(360px, 32vw, 480px); }
+  .top_circle__md  { width: clamp(260px, 25vw, 340px); height: clamp(260px, 25vw, 340px); }
+  .top_circle__md2 { width: clamp(230px, 22vw, 295px); height: clamp(230px, 22vw, 295px); }
+  .top_circle__sm  { width: clamp(160px, 16vw, 210px); height: clamp(160px, 16vw, 210px); }
+  .top_circle__sm2 { width: clamp(140px, 13vw, 180px); height: clamp(140px, 13vw, 180px); }
+  .top_circle__xs  { width: clamp(100px, 10vw, 130px); height: clamp(100px, 10vw, 130px); }
   .top_slider-dots {
     left: clamp(40px, 5%, 80px);
     right: auto;
@@ -1553,8 +1553,8 @@ h3, .h3 {
   display: block;
   position: absolute;
   z-index: 2;
-  width: 88px;
-  height: 88px;
+  width: 112px;
+  height: 112px;
   left: 5%;
   top: 42%;
   bottom: auto;
@@ -1564,8 +1564,8 @@ h3, .h3 {
   display: block;
   position: absolute;
   z-index: 2;
-  width: 72px;
-  height: 72px;
+  width: 96px;
+  height: 96px;
   right: 8%;
   top: 28%;
   bottom: auto;
