@@ -1564,8 +1564,8 @@ h3, .h3 {
   width: 104px;
   height: 104px;
   left: 5%;
-  bottom: 104px;
-  top: auto;
+  top: 52%;
+  bottom: auto;
   animation: float-a 6s ease-in-out infinite 1.1s;
 }
 .top_hero_sp-b {
@@ -1575,8 +1575,8 @@ h3, .h3 {
   width: 80px;
   height: 80px;
   right: 8%;
-  bottom: 148px;
-  top: auto;
+  top: 38%;
+  bottom: auto;
   animation: float-c 4.8s ease-in-out infinite 1.7s;
 }
 
