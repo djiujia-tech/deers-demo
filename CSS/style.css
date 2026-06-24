@@ -1443,8 +1443,8 @@ h3, .h3 {
     max-width: none;
     margin-left: 0;
     margin-right: 0;
-    padding-left: clamp(40px, 5%, 80px);
-    padding-right: 50%;
+    padding-left: clamp(80px, 12%, 160px);
+    padding-right: 45%;
   }
   .top_hero_dyn-wrap .top_hero_actions {
     position: static;
