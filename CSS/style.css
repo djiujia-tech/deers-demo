@@ -598,7 +598,7 @@ h3, .h3 {
   border-bottom: 1px solid var(--chalk-dim);
 }
 .m_step:last-child { border-bottom: none; }
-.m_step .m_step_num  { font-family: var(--f-score); font-size: 32px; color: var(--wood-dark); }
+.m_step .m_step_num  { font-family: var(--f-score); font-size: 48px; color: var(--amber); }
 .m_step h3         { color: var(--ink); }
 
 /* cta block */
