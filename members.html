@@ -209,10 +209,10 @@
 
 <script src="Js/script.js"></script>
 <script>
-  document.querySelectorAll('.accordion-btn').forEach(function(btn) {
+  document.querySelectorAll('.members_accordion-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var body = this.nextElementSibling;
-      var icon = this.querySelector('.accordion-icon');
+      var icon = this.querySelector('.members_accordion-icon');
       var expanded = this.getAttribute('aria-expanded') === 'true';
       this.setAttribute('aria-expanded', !expanded);
       if (expanded) {
