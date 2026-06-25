@@ -143,6 +143,17 @@ section {
   right: 0;
   background: linear-gradient(to left, var(--chalk), transparent);
 }
+.top_ig-pause-btn {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  -webkit-tap-highlight-color: transparent;
+}
 .top_ig-ticker_track {
   display: flex;
   gap: 8px;

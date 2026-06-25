@@ -3,21 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // ══════════════════════════════════════════
   // IGフォトティッカー：SP タップで一時停止/再開
   // ══════════════════════════════════════════
-  var igTicker = document.querySelector('.top_ig-ticker');
-  var igTrack  = document.querySelector('.top_ig-ticker_track');
-  if (igTicker && igTrack) {
-    var _touchStartY = 0;
-    igTicker.addEventListener('touchstart', function (e) {
-      _touchStartY = e.touches[0].clientY;
-    }, { passive: true });
-    igTicker.addEventListener('touchend', function (e) {
-      var dy = Math.abs(e.changedTouches[0].clientY - _touchStartY);
-      if (dy < 10) {
-        igTrack.classList.toggle('is-paused');
-      }
-    }, { passive: true });
-    // PC用
-    igTicker.addEventListener('click', function () {
+  var igPauseBtn = document.querySelector('.top_ig-pause-btn');
+  var igTrack    = document.querySelector('.top_ig-ticker_track');
+  if (igPauseBtn && igTrack) {
+    igPauseBtn.addEventListener('click', function () {
       igTrack.classList.toggle('is-paused');
     });
   }
