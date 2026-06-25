@@ -6,6 +6,17 @@ document.addEventListener('DOMContentLoaded', function () {
   var igTicker = document.querySelector('.top_ig-ticker');
   var igTrack  = document.querySelector('.top_ig-ticker_track');
   if (igTicker && igTrack) {
+    var _touchStartY = 0;
+    igTicker.addEventListener('touchstart', function (e) {
+      _touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    igTicker.addEventListener('touchend', function (e) {
+      var dy = Math.abs(e.changedTouches[0].clientY - _touchStartY);
+      if (dy < 10) {
+        igTrack.classList.toggle('is-paused');
+      }
+    }, { passive: true });
+    // PC用
     igTicker.addEventListener('click', function () {
       igTrack.classList.toggle('is-paused');
     });
