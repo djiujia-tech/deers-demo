@@ -586,6 +586,38 @@ h3, .h3 {
 }
 .m_section-theme .m_eyebrow { text-align: center; }
 
+.m_section-theme_list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  counter-reset: commit-counter;
+}
+.m_section-theme_list li {
+  counter-increment: commit-counter;
+  font-size: 14px;
+  color: rgba(246, 243, 236, 0.75);
+  line-height: 1.75;
+  padding-left: 28px;
+  position: relative;
+  text-align: left;
+}
+.m_section-theme_list li::before {
+  content: counter(commit-counter) ".";
+  position: absolute;
+  left: 0;
+  font-family: var(--f-score);
+  color: var(--amber);
+  font-size: 14px;
+}
+.m_section-theme_list li strong {
+  color: var(--chalk);
+  display: block;
+  font-weight: 700;
+}
+
 @media (min-width: 769px) {
   .m_section-theme_inner    { flex-direction: row; align-items: center; gap: 56px; }
   .m_section-theme_img      { width: 280px; margin: 0; }
