@@ -146,7 +146,7 @@ section {
   display: flex;
   gap: 8px;
   width: max-content;
-  animation: ticker-scroll 30s linear infinite;
+  animation: ticker-scroll 300s linear infinite;
 }
 .top_ig-ticker_track:hover { animation-play-state: paused; }
 .top_ig-ticker_photo {
