@@ -1893,9 +1893,9 @@ h3, .h3 {
 
 /* ロゴ共通 */
 #site-intro .top_intro-logo {
-  width: clamp(130px, 32vw, 200px);
+  width: clamp(200px, 50vw, 320px);
   height: auto;
-  border-radius: 50%;
+  border-radius: 0;
   position: relative;
   z-index: 1;
 }
