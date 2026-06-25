@@ -149,6 +149,7 @@ section {
   animation: ticker-scroll 300s linear infinite;
 }
 .top_ig-ticker_track:hover { animation-play-state: paused; }
+.top_ig-ticker_track.is-paused { animation-play-state: paused; }
 .top_ig-ticker_photo {
   width: 220px;
   height: 220px;
