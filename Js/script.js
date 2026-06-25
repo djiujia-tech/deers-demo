@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // ══════════════════════════════════════════
   // IGフォトティッカー：SP タップで一時停止/再開
   // ══════════════════════════════════════════
-  var igTrack = document.querySelector('.top_ig-ticker_track');
-  if (igTrack) {
-    igTrack.addEventListener('click', function () {
+  var igTicker = document.querySelector('.top_ig-ticker');
+  var igTrack  = document.querySelector('.top_ig-ticker_track');
+  if (igTicker && igTrack) {
+    igTicker.addEventListener('click', function () {
       igTrack.classList.toggle('is-paused');
     });
   }
