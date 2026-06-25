@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // ══════════════════════════════════════════
   var igTrack = document.querySelector('.top_ig-ticker_track');
   if (igTrack) {
-    igTrack.addEventListener('touchstart', function () {
+    igTrack.addEventListener('click', function () {
       igTrack.classList.toggle('is-paused');
-    }, { passive: true });
+    });
   }
 
 
