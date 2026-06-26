@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>お問い合わせ | OITA DEERS U15</title>
+<meta name="description" content="OITA DEERS U15へのお問い合わせはこちら。体験参加・スポンサー・その他のご相談をお気軽にどうぞ。">
+<!-- OGP -->
+<meta property="og:site_name" content="OITA DEERS U15">
+<meta property="og:url" content="https://deers-demo.vercel.app/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="お問い合わせ | OITA DEERS U15">
+<meta property="og:description" content="OITA DEERS U15へのお問い合わせはこちら。体験参加・スポンサー・その他のご相談をお気軽にどうぞ。">
+<meta property="og:image" content="https://deers-demo.vercel.app/assets/ogp.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="OITA DEERS U15へのお問い合わせはこちら。">
+<meta name="twitter:image:src" content="https://deers-demo.vercel.app/assets/ogp.jpg">
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="webclip.png">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="CSS/reset.css">
+<link rel="stylesheet" href="CSS/style.css">
+<style>
+.contact_form {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact_field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact_label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: .04em;
+}
+.contact_label .contact_required {
+  color: var(--amber-deep);
+  margin-left: 4px;
+  font-size: 11px;
+}
+.contact_input,
+.contact_select,
+.contact_textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid var(--chalk-dim);
+  border-radius: var(--radius);
+  font-family: var(--f-body);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--white);
+  transition: border-color .15s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.contact_input:focus,
+.contact_select:focus,
+.contact_textarea:focus {
+  outline: none;
+  border-color: var(--pine);
+}
+.contact_select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234B5A53' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+.contact_textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.75;
+}
+.contact_note {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.contact_submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.contact_submit .m_btn {
+  width: 100%;
+  max-width: 360px;
+}
+.contact_alt {
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.contact_alt a {
+  color: var(--pine);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.contact_divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+.contact_divider::before,
+.contact_divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--chalk-dim);
+}
+</style>
+</head>
+<body>
+
+<header class="l_header">
+  <div class="l_container">
+    <a href="index.html" class="l_header-logo">
+      <img src="assets/logo-main.png" alt="OITA DEERS U15" class="l_header-logo_img"><span class="l_header-logo_text">OITA DEERS<span class="l_header-logo_sub">U15 BASKETBALL</span></span>
+    </a>
+    <nav class="l_header-nav" aria-label="メインナビゲーション">
+      <a href="index.html"><span class="l_header-nav_tag">Q1</span>ホーム</a>
+      <a href="trial.html" class="is-live"><span class="l_header-nav_tag">Q2</span>体験申込</a>
+      <a href="sponsor.html"><span class="l_header-nav_tag">Q3</span>スポンサー</a>
+      <a href="results.html"><span class="l_header-nav_tag">Q4</span>試合結果</a>
+      <a href="members.html"><span class="l_header-nav_tag">OT</span>選手紹介</a>
+    </nav>
+    <button class="m_hamburger" aria-label="メニューを開く" aria-expanded="false">MENU</button>
+  </div>
+</header>
+
+<section class="top_hero top_hero__pb50">
+  <div class="l_container">
+    <div class="top_hero_content">
+      <p class="m_eyebrow">CONTACT</p>
+      <h2 class="members_copy">お問い合わせ</h2>
+      <p class="m_lede">体験参加・スポンサー・その他のご相談はこちらから。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="l_container">
+
+    <!-- フォーム -->
+    <!-- ※ action="https://formspree.io/f/XXXXXXXX" の XXXXXXXX を formspree.io で取得したIDに差し替えてください -->
+    <form class="contact_form m_reveal" action="https://formspree.io/f/XXXXXXXX" method="POST">
+
+      <div class="contact_field">
+        <label class="contact_label" for="contact_type">お問い合わせ種別<span class="contact_required">必須</span></label>
+        <select class="contact_select" id="contact_type" name="種別" required>
+          <option value="" disabled selected>選択してください</option>
+          <option value="体験参加について">体験参加について</option>
+          <option value="スポンサーについて">スポンサーについて</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <div class="contact_field">
+        <label class="contact_label" for="contact_name">お名前<span class="contact_required">必須</span></label>
+        <input class="contact_input" type="text" id="contact_name" name="お名前" placeholder="山田 太郎" required>
+      </div>
+
+      <div class="contact_field">
+        <label class="contact_label" for="contact_email">メールアドレス<span class="contact_required">必須</span></label>
+        <input class="contact_input" type="email" id="contact_email" name="メールアドレス" placeholder="example@email.com" required>
+      </div>
+
+      <div class="contact_field">
+        <label class="contact_label" for="contact_tel">電話番号<span style="font-size:11px;color:var(--ink-soft);margin-left:6px;">任意</span></label>
+        <input class="contact_input" type="tel" id="contact_tel" name="電話番号" placeholder="090-0000-0000">
+      </div>
+
+      <div class="contact_field">
+        <label class="contact_label" for="contact_msg">お問い合わせ内容<span class="contact_required">必須</span></label>
+        <textarea class="contact_textarea" id="contact_msg" name="内容" placeholder="ご質問・ご要望をご記入ください。" required></textarea>
+      </div>
+
+      <p class="contact_note">送信後、3営業日以内にご登録のメールアドレスへ返信いたします。</p>
+
+      <div class="contact_submit">
+        <button type="submit" class="m_btn m_btn__primary">送信する</button>
+        <p class="contact_alt">または <a href="https://lin.ee/4VsUYfm" target="_blank" rel="noopener">LINEで直接相談する</a></p>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <div class="l_container">
+    <div class="l_footer_inner">
+      <a href="index.html" class="l_header-logo">
+        <img src="assets/logo-main.png" alt="OITA DEERS U15" class="l_header-logo_img"><span class="l_header-logo_text">OITA DEERS<span class="l_header-logo_sub">U15 BASKETBALL</span></span>
+      </a>
+      <div class="l_footer-nav">
+        <div>
+          <h4>SITE</h4>
+          <a href="trial.html">体験申込</a>
+          <a href="sponsor.html">スポンサー</a>
+          <a href="results.html">試合結果</a>
+          <a href="members.html">選手紹介</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+        <div>
+          <h4>SNS</h4>
+          <a href="https://www.instagram.com/deers_u15_basketballteam/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <p class="l_footer_copyright">© OITA DEERS U15.</p>
+  </div>
+</footer>
+
+<script src="Js/script.js"></script>
+</body>
+</html>
