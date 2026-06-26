@@ -117,6 +117,8 @@
   color: var(--ink-soft);
   font-size: 12px;
   letter-spacing: .08em;
+  max-width: 640px;
+  margin: 40px auto;
 }
 .contact_divider::before,
 .contact_divider::after {
@@ -124,6 +126,29 @@
   flex: 1;
   height: 1px;
   background: var(--chalk-dim);
+}
+.contact_line-block {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0 8px;
+}
+.contact_line-heading {
+  font-family: var(--f-score);
+  font-size: clamp(22px, 4vw, 28px);
+  color: var(--ink);
+  margin: 8px 0 12px;
+  letter-spacing: .04em;
+}
+.contact_form-lead {
+  max-width: 640px;
+  margin: 0 auto 24px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
 }
 </style>
 </head>
@@ -159,7 +184,22 @@
 <section>
   <div class="l_container">
 
-    <!-- フォーム -->
+    <!-- LINE（一番目：メイン導線） -->
+    <div class="contact_line-block m_reveal">
+      <p class="m_eyebrow" style="text-align:center;">OFFICIAL LINE</p>
+      <h3 class="contact_line-heading">LINEで気軽に相談する</h3>
+      <p class="contact_note" style="text-align:center;">友だち追加後、メッセージを送るだけ。一番早く返信できます。</p>
+      <div class="contact_submit" style="margin-top:24px;">
+        <a href="https://lin.ee/4VsUYfm" target="_blank" rel="noopener" class="m_btn m_btn__primary">公式LINEを追加する</a>
+      </div>
+    </div>
+
+    <!-- 区切り -->
+    <div class="contact_divider m_reveal">または</div>
+
+    <!-- フォーム（二番目） -->
+    <p class="contact_form-lead m_reveal">メールフォームでお問い合わせ</p>
+
     <!-- ※ action="https://formspree.io/f/XXXXXXXX" の XXXXXXXX を formspree.io で取得したIDに差し替えてください -->
     <form class="contact_form m_reveal" action="https://formspree.io/f/XXXXXXXX" method="POST">
 
@@ -197,7 +237,6 @@
 
       <div class="contact_submit">
         <button type="submit" class="m_btn m_btn__primary">送信する</button>
-        <p class="contact_alt">または <a href="https://lin.ee/4VsUYfm" target="_blank" rel="noopener">LINEで直接相談する</a></p>
       </div>
 
     </form>
