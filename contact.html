@@ -270,5 +270,27 @@
 </footer>
 
 <script src="Js/script.js"></script>
+<script>
+  (function () {
+    var typeMap = {
+      'sponsor': 'スポンサーについて',
+      'trial'  : '体験参加について'
+    };
+    var param = new URLSearchParams(window.location.search).get('type');
+    if (!param || !typeMap[param]) return;
+
+    // select に値をセット
+    var sel = document.getElementById('contact_type');
+    if (sel) sel.value = typeMap[param];
+
+    // フォームまでスクロール
+    var form = document.querySelector('.contact_form');
+    if (form) {
+      setTimeout(function () {
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  })();
+</script>
 </body>
 </html>
