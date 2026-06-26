@@ -617,6 +617,16 @@ h3, .h3 {
   display: block;
   font-weight: 700;
 }
+/* ライト背景版：テキストを暗色に */
+.m_section-theme__light .m_section-theme_list li {
+  color: var(--ink-soft);
+}
+.m_section-theme__light .m_section-theme_list li strong {
+  color: var(--ink);
+}
+.m_section-theme__light .m_section-theme_body {
+  color: var(--ink-soft);
+}
 
 @media (min-width: 769px) {
   .m_section-theme_inner    { flex-direction: row; align-items: center; gap: 56px; }
