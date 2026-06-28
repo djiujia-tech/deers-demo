@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>お知らせ | OITA DEERS U15</title>
+<meta name="description" content="OITA DEERS U15からのお知らせ・最新情報です。">
+<!-- OGP -->
+<meta property="og:site_name" content="OITA DEERS U15">
+<meta property="og:url" content="https://deers-demo.vercel.app/news.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="お知らせ | OITA DEERS U15">
+<meta property="og:description" content="OITA DEERS U15からのお知らせ・最新情報です。">
+<meta property="og:image" content="https://deers-demo.vercel.app/assets/ogp.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="OITA DEERS U15からのお知らせ・最新情報です。">
+<meta name="twitter:image:src" content="https://deers-demo.vercel.app/assets/ogp.jpg">
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="webclip.png">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="CSS/reset.css">
+<link rel="stylesheet" href="CSS/style.css">
+<style>
+.news_list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.news_item {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: start;
+  gap: 12px 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--chalk-dim);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity .15s ease;
+}
+.news_item:first-child {
+  border-top: 1px solid var(--chalk-dim);
+}
+.news_item:hover {
+  opacity: .7;
+}
+.news_date {
+  font-family: var(--f-score);
+  font-size: 13px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+.news_cat {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.news_cat__trial   { background: var(--pine);       color: var(--chalk); }
+.news_cat__result  { background: var(--amber);       color: var(--ink); }
+.news_cat__sponsor { background: var(--ink-soft);    color: var(--chalk); }
+.news_cat__other   { background: var(--chalk-dim);   color: var(--ink); }
+.news_title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .news_item {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+  .news_date {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .news_cat {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+  }
+  .news_title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="l_header">
+  <div class="l_container">
+    <a href="index.html" class="l_header-logo">
+      <img src="assets/logo-main.png" alt="OITA DEERS U15" class="l_header-logo_img"><span class="l_header-logo_text">OITA DEERS<span class="l_header-logo_sub">U15 BASKETBALL</span></span>
+    </a>
+    <nav class="l_header-nav" aria-label="メインナビゲーション">
+      <a href="index.html"><span class="l_header-nav_tag">Q1</span>ホーム</a>
+      <a href="trial.html" class="is-live"><span class="l_header-nav_tag">Q2</span>体験申込</a>
+      <a href="sponsor.html"><span class="l_header-nav_tag">Q3</span>スポンサー</a>
+      <a href="results.html"><span class="l_header-nav_tag">Q4</span>試合結果</a>
+      <a href="members.html"><span class="l_header-nav_tag">OT</span>選手紹介</a>
+      <a href="contact.html"><span class="l_header-nav_tag">TO</span>お問い合わせ</a>
+    </nav>
+    <button class="m_hamburger" aria-label="メニューを開く" aria-expanded="false">MENU</button>
+  </div>
+</header>
+
+<section class="top_hero top_hero__pb50">
+  <div class="l_container">
+    <div class="top_hero_content">
+      <p class="m_eyebrow">NEWS</p>
+      <h2 class="members_copy">お知らせ</h2>
+      <p class="m_lede">チームからの最新情報をお届けします。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="l_container">
+    <div class="news_list m_reveal">
+
+      <a href="#" class="news_item">
+        <span class="news_date">2026.06.20</span>
+        <span class="news_cat news_cat__trial">体験会</span>
+        <span class="news_title">7月の無料体験会の日程が決まりました</span>
+      </a>
+
+      <a href="#" class="news_item">
+        <span class="news_date">2026.06.10</span>
+        <span class="news_cat news_cat__result">大会</span>
+        <span class="news_title">県中学校体育大会 ベスト8進出のご報告</span>
+      </a>
+
+      <a href="#" class="news_item">
+        <span class="news_date">2026.05.28</span>
+        <span class="news_cat news_cat__sponsor">スポンサー</span>
+        <span class="news_title">新たにスポンサー企業様にご支援いただくことになりました</span>
+      </a>
+
+      <a href="#" class="news_item">
+        <span class="news_date">2026.05.01</span>
+        <span class="news_cat news_cat__trial">体験会</span>
+        <span class="news_title">5・6月の体験会スケジュールを公開しました</span>
+      </a>
+
+      <a href="#" class="news_item">
+        <span class="news_date">2026.04.15</span>
+        <span class="news_cat news_cat__other">その他</span>
+        <span class="news_title">公式サイトをリニューアルしました</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="l_container">
+    <div class="l_footer_inner">
+      <a href="index.html" class="l_header-logo">
+        <img src="assets/logo-main.png" alt="OITA DEERS U15" class="l_header-logo_img"><span class="l_header-logo_text">OITA DEERS<span class="l_header-logo_sub">U15 BASKETBALL</span></span>
+      </a>
+      <div class="l_footer-nav">
+        <div>
+          <h4>SITE</h4>
+          <a href="trial.html">体験申込</a>
+          <a href="sponsor.html">スポンサー</a>
+          <a href="results.html">試合結果</a>
+          <a href="members.html">選手紹介</a>
+          <a href="news.html">お知らせ</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+        <div>
+          <h4>SNS</h4>
+          <a href="https://www.instagram.com/deers_u15_basketballteam/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <p class="l_footer_copyright">© OITA DEERS U15. <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;margin-left:16px;">プライバシーポリシー</a></p>
+  </div>
+</footer>
+
+<script src="Js/script.js"></script>
+</body>
+</html>
