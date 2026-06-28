@@ -140,6 +140,26 @@
   margin: 8px 0 12px;
   letter-spacing: .04em;
 }
+.contact_agree {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.contact_agree input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--pine);
+  cursor: pointer;
+}
+.contact_agree a {
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .contact_form-lead {
   max-width: 640px;
   margin: 0 auto 24px;
@@ -234,6 +254,13 @@
       </div>
 
       <p class="contact_note">送信後、3営業日以内にご登録のメールアドレスへ返信いたします。</p>
+
+      <div class="contact_field">
+        <label class="contact_agree">
+          <input type="checkbox" name="同意" required>
+          <span><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</span>
+        </label>
+      </div>
 
       <div class="contact_submit">
         <button type="submit" class="m_btn m_btn__primary">送信する</button>
