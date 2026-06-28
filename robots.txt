@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /privacy.html
+
+Sitemap: https://deers-demo.vercel.app/sitemap.xml
