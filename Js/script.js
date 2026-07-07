@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       // ── 1枚目：TRYOUT / EXPERIENCE（旧2枚目）
       eyebrow  : 'JOIN THE TEAM / 無料体験会・見学 随時受付中',
-      h1       : 'その熱量を、<br>コートで<span class="m_accent">試せ。</span>',
+      h1       : 'その熱量を<br>コートで<span class="m_accent">試せ。</span>',
       lede     : '無料体験会・見学随時受付中。まずはコートに来てみてください。',
       btnText  : '無料体験',
       btnHref  : 'contact.html',
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       // ── 2枚目：PARTNERS / SPONSORS（旧3枚目）
       eyebrow  : 'TEAM PARTNERS / 応援してくれる最高の仲間たち',
-      h1       : '共に、大分から<br><span class="m_accent">未来へ。</span>',
+      h1       : '共に大分から<br><span class="m_accent">未来へ。</span>',
       lede     : '地域の未来を担う子どもたちの挑戦を、一緒に支えてください。',
       btnText  : 'スポンサー募集中',
       btnHref  : 'contact.html',

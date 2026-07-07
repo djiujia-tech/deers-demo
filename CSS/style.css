@@ -1079,11 +1079,12 @@ h3, .h3 {
 
 /* hero-copy: h1タグの代わり（SEO対策） */
 .top_hero_copy {
-  font-family: var(--f-display);
-  font-weight: 900;
+  font-family: var(--f-body);
+  font-weight: 700;
   font-size: clamp(36px, 6vw, 72px);
   line-height: 1.2;
   color: var(--chalk);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4);
 }
 .top_hero_copy .m_accent { color: var(--amber); }
 .top_hero_content .m_lede       { color: rgba(246, 243, 236, .82); margin-top: 18px; }
