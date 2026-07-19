@@ -1205,7 +1205,7 @@ h3, .h3 {
 }
 .top_slide-overlay__wood {
   background: radial-gradient(
-    ellipse 50% 68% at 25% 47%,
+    ellipse 50% 58% at 24% 66%,
     rgba(18, 64, 25, .82) 0%,
     rgba(18, 64, 25, .60) 28%,
     rgba(18, 64, 25, .36) 50%,
@@ -1465,7 +1465,7 @@ h3, .h3 {
   .top_slide-overlay,
   .top_slide-overlay__circles {
     background: radial-gradient(
-      ellipse 50% 68% at 25% 47%,
+      ellipse 50% 58% at 24% 66%,
       rgba(18, 64, 25, .82) 0%,
       rgba(18, 64, 25, .60) 28%,
       rgba(18, 64, 25, .36) 50%,
@@ -1485,8 +1485,9 @@ h3, .h3 {
   /* restore hero dyn-wrap layout */
   .top_hero_dyn-wrap {
     z-index: 2;
-    justify-content: center;
+    justify-content: flex-end;
     padding-top: 0;
+    padding-bottom: clamp(48px, 8vh, 100px);
   }
   .top_hero_dyn-wrap > .l_container {
     min-height: auto;
