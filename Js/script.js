@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
       // ── 2枚目：PARTNERS / SPONSORS（旧3枚目）
       eyebrow  : 'TEAM PARTNERS / 応援してくれる最高の仲間たち',
-      h1       : '共に大分から<br><span class="m_accent">未来へ</span>',
+      h1       : '共に大分から<span class="m_accent">未来へ</span>',
       lede     : '地域の未来を担う子どもたちの挑戦を、一緒に支えてください。',
       btnText  : 'スポンサー募集中',
       btnHref  : 'contact.html',
