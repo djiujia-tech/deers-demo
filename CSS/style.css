@@ -1598,16 +1598,16 @@ h3, .h3 {
   .top_slide-overlay,
   .top_slide-overlay__circles {
     background: radial-gradient(
-      ellipse 95% 16% at 48% 28%,
+      ellipse 96% 12% at 50% 21%,
       rgba(18, 64, 25, .52) 0%,
-      rgba(18, 64, 25, .34) 45%,
-      rgba(18, 64, 25, .12) 72%,
-      transparent 90%
+      rgba(18, 64, 25, .34) 46%,
+      rgba(18, 64, 25, .12) 74%,
+      transparent 92%
     );
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    -webkit-mask-image: radial-gradient(ellipse 95% 16% at 48% 28%, #000 0%, #000 42%, transparent 86%);
-    mask-image: radial-gradient(ellipse 95% 16% at 48% 28%, #000 0%, #000 42%, transparent 86%);
+    -webkit-mask-image: radial-gradient(ellipse 96% 12% at 50% 21%, #000 0%, #000 40%, transparent 88%);
+    mask-image: radial-gradient(ellipse 96% 12% at 50% 21%, #000 0%, #000 40%, transparent 88%);
   }
 }
 
