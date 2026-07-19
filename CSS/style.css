@@ -1677,7 +1677,7 @@ h3, .h3 {
     font-size: 22px;
     min-width: 340px;
   }
-  .top_hero_dyn-wrap .top_hero_content { position: static; z-index: 1; }
+  .top_hero_dyn-wrap .top_hero_content { position: static; z-index: 1; max-width: 780px; }
   .top_hero_xl     { z-index: 1; }
   .top_slider-dots { z-index: 9; }
   .top_hero_meta   { flex-direction: row; gap: 28px; }
