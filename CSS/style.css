@@ -1457,12 +1457,7 @@ h3, .h3 {
   .top_hero { padding-bottom: clamp(70px, 12vw, 130px); }
   .top_slide-overlay,
   .top_slide-overlay__circles {
-    background: linear-gradient(
-      115deg,
-      rgba(18, 64, 25, .88) 0%,
-      rgba(18, 64, 25, .60) 55%,
-      rgba(18, 64, 25, .20) 100%
-    );
+    background: transparent;
   }
   /* restore circles */
   .top_circle__lg, .top_circle__md, .top_circle__md2, .top_circle__sm { display: block; }
@@ -1581,12 +1576,7 @@ h3, .h3 {
 
 .top_slide-overlay,
 .top_slide-overlay__circles {
-  background: linear-gradient(
-    to bottom,
-    rgba(18, 64, 25, .88) 0%,
-    rgba(18, 64, 25, .55) 40%,
-    rgba(18, 64, 25, .18) 100%
-  );
+  background: transparent;
 }
 
 .top_circle__lg, .top_circle__md, .top_circle__md2, .top_circle__sm { display: none; }
