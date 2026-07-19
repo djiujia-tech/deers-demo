@@ -1579,7 +1579,7 @@ h3, .h3 {
 /* モバイル：テキストを中段に、ボタンを FV 底部に固定 */
 .top_hero_dyn-wrap {
   justify-content: flex-start;
-  padding-top: max(72px, 12vh);
+  padding-top: max(56px, 8vh);
 }
 .top_hero_dyn-wrap > .l_container { min-height: 100%; position: relative; }
 /* top_hero_content は position:relative を持つので static に戻して
@@ -1659,9 +1659,9 @@ h3, .h3 {
 @media (min-width: 769px) {
   .top_hero_dyn-wrap {
     z-index: 12;
-    justify-content: flex-end;
-    padding-top: 0;
-    padding-bottom: clamp(48px, 8vh, 100px);
+    justify-content: flex-start;
+    padding-top: clamp(80px, 13vh, 150px);
+    padding-bottom: 0;
   }
   .top_hero_dyn-wrap > .l_container { min-height: auto; position: static; }
   .top_hero_dyn-wrap .top_hero_actions {
