@@ -1589,10 +1589,10 @@ h3, .h3 {
 .top_slide-overlay,
 .top_slide-overlay__circles {
   background: radial-gradient(
-    ellipse 95% 52% at 42% 47%,
-    rgba(18, 64, 25, .74) 0%,
-    rgba(18, 64, 25, .40) 46%,
-    transparent 80%
+    ellipse 82% 26% at 44% 31%,
+    rgba(18, 64, 25, .52) 0%,
+    rgba(18, 64, 25, .24) 55%,
+    transparent 82%
   );
 }
 
