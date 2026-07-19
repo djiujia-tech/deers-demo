@@ -6,9 +6,9 @@
 
 :root {
   /* color */
-  --pine:        #0E4A18;
-  --pine-light:  #1A6329;
-  --pine-line:   #2C7A42;
+  --pine:        #124019;
+  --pine-light:  #185A27;
+  --pine-line:   #2C6E3C;
   --wood:        #C68B4F;
   --wood-dark:   #9C6A37;
   --wood-deep:   #7A4F26;
@@ -719,11 +719,11 @@ h3, .h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(155deg, rgba(14, 74, 24, .82) 0%, rgba(14, 74, 24, .28) 55%, rgba(255, 182, 39, .16) 100%);
+  background: linear-gradient(155deg, rgba(18, 64, 25, .82) 0%, rgba(18, 64, 25, .28) 55%, rgba(255, 182, 39, .16) 100%);
   mix-blend-mode: multiply;
 }
 .photo.is-light::after {
-  background: linear-gradient(155deg, rgba(14, 74, 24, .55) 0%, rgba(14, 74, 24, .1) 60%, rgba(255, 182, 39, .1) 100%);
+  background: linear-gradient(155deg, rgba(18, 64, 25, .55) 0%, rgba(18, 64, 25, .1) 60%, rgba(255, 182, 39, .1) 100%);
 }
 .top_photo-banner       { aspect-ratio: 4 / 3; }
 .photo.photo-banner { border-radius: 4px; }
@@ -1203,26 +1203,26 @@ h3, .h3 {
   z-index: 1;
   background: linear-gradient(
     115deg,
-    rgba(14, 74, 24, .88) 0%,
-    rgba(14, 74, 24, .60) 55%,
-    rgba(14, 74, 24, .20) 100%
+    rgba(18, 64, 25, .88) 0%,
+    rgba(18, 64, 25, .60) 55%,
+    rgba(18, 64, 25, .20) 100%
   );
 }
 .top_slide-overlay__wood {
   background: linear-gradient(
     115deg,
-    rgba(14, 74, 24, .92) 0%,
-    rgba(14, 74, 24, .65) 50%,
+    rgba(18, 64, 25, .92) 0%,
+    rgba(18, 64, 25, .65) 50%,
     rgba(198, 139, 79, .18) 100%
   );
 }
 .top_slide-overlay__circles {
   background: linear-gradient(
     105deg,
-    rgba(14, 74, 24, .97) 0%,
-    rgba(14, 74, 24, .82) 28%,
-    rgba(14, 74, 24, .42) 58%,
-    rgba(14, 74, 24, .06) 100%
+    rgba(18, 64, 25, .97) 0%,
+    rgba(18, 64, 25, .82) 28%,
+    rgba(18, 64, 25, .42) 58%,
+    rgba(18, 64, 25, .06) 100%
   );
 }
 .top_slide-inner {
@@ -1475,9 +1475,9 @@ h3, .h3 {
   .top_slide-overlay__circles {
     background: linear-gradient(
       115deg,
-      rgba(14, 74, 24, .88) 0%,
-      rgba(14, 74, 24, .60) 55%,
-      rgba(14, 74, 24, .20) 100%
+      rgba(18, 64, 25, .88) 0%,
+      rgba(18, 64, 25, .60) 55%,
+      rgba(18, 64, 25, .20) 100%
     );
   }
   /* restore circles */
@@ -1599,9 +1599,9 @@ h3, .h3 {
 .top_slide-overlay__circles {
   background: linear-gradient(
     to bottom,
-    rgba(14, 74, 24, .88) 0%,
-    rgba(14, 74, 24, .55) 40%,
-    rgba(14, 74, 24, .18) 100%
+    rgba(18, 64, 25, .88) 0%,
+    rgba(18, 64, 25, .55) 40%,
+    rgba(18, 64, 25, .18) 100%
   );
 }
 
