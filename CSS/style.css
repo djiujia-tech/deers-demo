@@ -1205,7 +1205,7 @@ h3, .h3 {
 }
 .top_slide-overlay.top_slide-overlay__wood {
   background: radial-gradient(
-    ellipse 44% 26% at 26% 73%,
+    ellipse 46% 19% at 27% 25%,
     rgba(18, 64, 25, .70) 0%,
     rgba(18, 64, 25, .48) 34%,
     rgba(18, 64, 25, .22) 60%,
@@ -1213,8 +1213,8 @@ h3, .h3 {
   );
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  -webkit-mask-image: radial-gradient(ellipse 44% 26% at 26% 73%, #000 0%, #000 40%, transparent 84%);
-  mask-image: radial-gradient(ellipse 44% 26% at 26% 73%, #000 0%, #000 40%, transparent 84%);
+  -webkit-mask-image: radial-gradient(ellipse 46% 19% at 27% 25%, #000 0%, #000 40%, transparent 84%);
+  mask-image: radial-gradient(ellipse 46% 19% at 27% 25%, #000 0%, #000 40%, transparent 84%);
 }
 .top_slide-overlay__circles {
   background: transparent;
@@ -1468,7 +1468,7 @@ h3, .h3 {
   .top_slide-overlay,
   .top_slide-overlay__circles {
     background: radial-gradient(
-      ellipse 44% 32% at 26% 70%,
+      ellipse 46% 24% at 27% 30%,
       rgba(18, 64, 25, .70) 0%,
       rgba(18, 64, 25, .48) 34%,
       rgba(18, 64, 25, .22) 60%,
@@ -1476,8 +1476,8 @@ h3, .h3 {
     );
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    -webkit-mask-image: radial-gradient(ellipse 44% 32% at 26% 70%, #000 0%, #000 40%, transparent 84%);
-    mask-image: radial-gradient(ellipse 44% 32% at 26% 70%, #000 0%, #000 40%, transparent 84%);
+    -webkit-mask-image: radial-gradient(ellipse 46% 24% at 27% 30%, #000 0%, #000 40%, transparent 84%);
+    mask-image: radial-gradient(ellipse 46% 24% at 27% 30%, #000 0%, #000 40%, transparent 84%);
   }
   /* restore circles */
   .top_circle__lg, .top_circle__md, .top_circle__md2, .top_circle__sm { display: block; }
@@ -1599,7 +1599,7 @@ h3, .h3 {
   .top_slide-overlay__circles,
   .top_slide-overlay.top_slide-overlay__wood {
     background: radial-gradient(
-      ellipse 96% 12% at 50% 21%,
+      ellipse 96% 13% at 50% 16%,
       rgba(18, 64, 25, .52) 0%,
       rgba(18, 64, 25, .34) 46%,
       rgba(18, 64, 25, .12) 74%,
@@ -1607,8 +1607,8 @@ h3, .h3 {
     );
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    -webkit-mask-image: radial-gradient(ellipse 96% 12% at 50% 21%, #000 0%, #000 40%, transparent 88%);
-    mask-image: radial-gradient(ellipse 96% 12% at 50% 21%, #000 0%, #000 40%, transparent 88%);
+    -webkit-mask-image: radial-gradient(ellipse 96% 13% at 50% 16%, #000 0%, #000 40%, transparent 88%);
+    mask-image: radial-gradient(ellipse 96% 13% at 50% 16%, #000 0%, #000 40%, transparent 88%);
   }
 }
 
