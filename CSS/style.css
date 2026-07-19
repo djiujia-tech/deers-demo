@@ -1204,12 +1204,12 @@ h3, .h3 {
   background: transparent;
 }
 .top_slide-overlay__wood {
-  background: linear-gradient(
-    100deg,
-    rgba(18, 64, 25, .78) 0%,
-    rgba(18, 64, 25, .42) 34%,
-    rgba(18, 64, 25, .08) 56%,
-    transparent 72%
+  background: radial-gradient(
+    ellipse 65% 85% at 20% 55%,
+    rgba(18, 64, 25, .80) 0%,
+    rgba(18, 64, 25, .50) 32%,
+    rgba(18, 64, 25, .18) 55%,
+    transparent 75%
   );
 }
 .top_slide-overlay__circles {
@@ -1463,12 +1463,12 @@ h3, .h3 {
   .top_hero { padding-bottom: clamp(70px, 12vw, 130px); }
   .top_slide-overlay,
   .top_slide-overlay__circles {
-    background: linear-gradient(
-      100deg,
-      rgba(18, 64, 25, .78) 0%,
-      rgba(18, 64, 25, .42) 34%,
-      rgba(18, 64, 25, .08) 56%,
-      transparent 72%
+    background: radial-gradient(
+      ellipse 65% 85% at 20% 55%,
+      rgba(18, 64, 25, .80) 0%,
+      rgba(18, 64, 25, .50) 32%,
+      rgba(18, 64, 25, .18) 55%,
+      transparent 75%
     );
   }
   /* restore circles */
@@ -1588,11 +1588,11 @@ h3, .h3 {
 
 .top_slide-overlay,
 .top_slide-overlay__circles {
-  background: linear-gradient(
-    to bottom,
-    rgba(18, 64, 25, .30) 0%,
-    rgba(18, 64, 25, .48) 55%,
-    rgba(18, 64, 25, .82) 100%
+  background: radial-gradient(
+    ellipse 130% 55% at 45% 88%,
+    rgba(18, 64, 25, .78) 0%,
+    rgba(18, 64, 25, .42) 45%,
+    transparent 78%
   );
 }
 
