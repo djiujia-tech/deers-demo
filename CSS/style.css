@@ -1201,12 +1201,7 @@ h3, .h3 {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    115deg,
-    rgba(18, 64, 25, .88) 0%,
-    rgba(18, 64, 25, .60) 55%,
-    rgba(18, 64, 25, .20) 100%
-  );
+  background: transparent;
 }
 .top_slide-overlay__wood {
   background: linear-gradient(
