@@ -1204,21 +1204,10 @@ h3, .h3 {
   background: transparent;
 }
 .top_slide-overlay__wood {
-  background: linear-gradient(
-    115deg,
-    rgba(18, 64, 25, .92) 0%,
-    rgba(18, 64, 25, .65) 50%,
-    rgba(198, 139, 79, .18) 100%
-  );
+  background: transparent;
 }
 .top_slide-overlay__circles {
-  background: linear-gradient(
-    105deg,
-    rgba(18, 64, 25, .97) 0%,
-    rgba(18, 64, 25, .82) 28%,
-    rgba(18, 64, 25, .42) 58%,
-    rgba(18, 64, 25, .06) 100%
-  );
+  background: transparent;
 }
 .top_slide-inner {
   position: relative;
