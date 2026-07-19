@@ -220,8 +220,10 @@
     <!-- フォーム（二番目） -->
     <p class="contact_form-lead m_reveal">メールフォームでお問い合わせ</p>
 
-    <!-- ※ action="https://formspree.io/f/XXXXXXXX" の XXXXXXXX を formspree.io で取得したIDに差し替えてください -->
-    <form class="contact_form m_reveal" action="https://formspree.io/f/XXXXXXXX" method="POST">
+    <form class="contact_form m_reveal" action="https://formspree.io/f/xojgdpea" method="POST">
+
+      <input type="hidden" name="_subject" value="【OITA DEERS】サイトからお問い合わせがありました">
+      <input type="hidden" name="_next" value="https://deers-demo.vercel.app/thanks.html">
 
       <div class="contact_field">
         <label class="contact_label" for="contact_type">お問い合わせ種別<span class="contact_required">必須</span></label>
