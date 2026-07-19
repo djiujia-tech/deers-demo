@@ -1203,7 +1203,7 @@ h3, .h3 {
   z-index: 1;
   background: transparent;
 }
-.top_slide-overlay__wood {
+.top_slide-overlay.top_slide-overlay__wood {
   background: radial-gradient(
     ellipse 44% 26% at 26% 73%,
     rgba(18, 64, 25, .70) 0%,
@@ -1594,20 +1594,22 @@ h3, .h3 {
 }
 .top_hero_dyn-wrap .top_hero_actions .m_btn { width: 100%; justify-content: center; }
 
-.top_slide-overlay,
-.top_slide-overlay__circles {
-  background: radial-gradient(
-    ellipse 90% 34% at 44% 31%,
-    rgba(18, 64, 25, .48) 0%,
-    rgba(18, 64, 25, .34) 30%,
-    rgba(18, 64, 25, .18) 54%,
-    rgba(18, 64, 25, .06) 74%,
-    transparent 92%
-  );
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  -webkit-mask-image: radial-gradient(ellipse 90% 34% at 44% 31%, #000 0%, #000 48%, transparent 84%);
-  mask-image: radial-gradient(ellipse 90% 34% at 44% 31%, #000 0%, #000 48%, transparent 84%);
+@media (max-width: 768px) {
+  .top_slide-overlay,
+  .top_slide-overlay__circles {
+    background: radial-gradient(
+      ellipse 90% 34% at 44% 31%,
+      rgba(18, 64, 25, .48) 0%,
+      rgba(18, 64, 25, .34) 30%,
+      rgba(18, 64, 25, .18) 54%,
+      rgba(18, 64, 25, .06) 74%,
+      transparent 92%
+    );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -webkit-mask-image: radial-gradient(ellipse 90% 34% at 44% 31%, #000 0%, #000 48%, transparent 84%);
+    mask-image: radial-gradient(ellipse 90% 34% at 44% 31%, #000 0%, #000 48%, transparent 84%);
+  }
 }
 
 .top_circle__lg, .top_circle__md, .top_circle__md2, .top_circle__sm { display: none; }
