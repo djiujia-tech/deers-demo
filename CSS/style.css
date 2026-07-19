@@ -1205,7 +1205,7 @@ h3, .h3 {
 }
 .top_slide-overlay__wood {
   background: radial-gradient(
-    ellipse 48% 56% at 26% 64%,
+    ellipse 46% 42% at 27% 72%,
     rgba(18, 64, 25, .72) 0%,
     rgba(18, 64, 25, .52) 28%,
     rgba(18, 64, 25, .30) 50%,
@@ -1214,8 +1214,8 @@ h3, .h3 {
   );
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  -webkit-mask-image: radial-gradient(ellipse 48% 56% at 26% 64%, #000 0%, #000 46%, transparent 82%);
-  mask-image: radial-gradient(ellipse 48% 56% at 26% 64%, #000 0%, #000 46%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse 46% 42% at 27% 72%, #000 0%, #000 46%, transparent 82%);
+  mask-image: radial-gradient(ellipse 46% 42% at 27% 72%, #000 0%, #000 46%, transparent 82%);
 }
 .top_slide-overlay__circles {
   background: transparent;
@@ -1469,7 +1469,7 @@ h3, .h3 {
   .top_slide-overlay,
   .top_slide-overlay__circles {
     background: radial-gradient(
-      ellipse 48% 56% at 26% 64%,
+      ellipse 46% 46% at 27% 68%,
       rgba(18, 64, 25, .72) 0%,
       rgba(18, 64, 25, .52) 28%,
       rgba(18, 64, 25, .30) 50%,
@@ -1478,8 +1478,8 @@ h3, .h3 {
     );
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    -webkit-mask-image: radial-gradient(ellipse 48% 56% at 26% 64%, #000 0%, #000 46%, transparent 82%);
-    mask-image: radial-gradient(ellipse 48% 56% at 26% 64%, #000 0%, #000 46%, transparent 82%);
+    -webkit-mask-image: radial-gradient(ellipse 46% 46% at 27% 68%, #000 0%, #000 46%, transparent 82%);
+    mask-image: radial-gradient(ellipse 46% 46% at 27% 68%, #000 0%, #000 46%, transparent 82%);
   }
   /* restore circles */
   .top_circle__lg, .top_circle__md, .top_circle__md2, .top_circle__sm { display: block; }
