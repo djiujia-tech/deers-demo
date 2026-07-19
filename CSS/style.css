@@ -1596,7 +1596,8 @@ h3, .h3 {
 
 @media (max-width: 768px) {
   .top_slide-overlay,
-  .top_slide-overlay__circles {
+  .top_slide-overlay__circles,
+  .top_slide-overlay.top_slide-overlay__wood {
     background: radial-gradient(
       ellipse 96% 12% at 50% 21%,
       rgba(18, 64, 25, .52) 0%,
