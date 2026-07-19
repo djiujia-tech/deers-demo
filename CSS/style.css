@@ -1503,7 +1503,7 @@ h3, .h3 {
     margin-left: 0;
     margin-right: 0;
     padding-left: clamp(40px, 5%, 80px);
-    padding-right: 50%;
+    padding-right: 44%;
   }
   .top_hero_dyn-wrap .top_hero_actions {
     position: static;
