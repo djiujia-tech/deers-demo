@@ -1203,7 +1203,7 @@ h3, .h3 {
   z-index: 1;
   background: transparent;
 }
-.top_slide-overlay.top_slide-overlay__wood {
+.top_hero__slides .top_slide-overlay.top_slide-overlay__wood {
   background: radial-gradient(
     ellipse 46% 19% at 27% 25%,
     rgba(18, 64, 25, .70) 0%,
@@ -1465,8 +1465,8 @@ h3, .h3 {
   .top_hero::after  { opacity: 1; }
   /* restore hero bottom padding (overrides mobile 96px) */
   .top_hero { padding-bottom: clamp(70px, 12vw, 130px); }
-  .top_slide-overlay,
-  .top_slide-overlay__circles {
+  .top_hero__slides .top_slide-overlay,
+  .top_hero__slides .top_slide-overlay__circles {
     background: radial-gradient(
       ellipse 46% 24% at 27% 30%,
       rgba(18, 64, 25, .70) 0%,
@@ -1595,9 +1595,9 @@ h3, .h3 {
 .top_hero_dyn-wrap .top_hero_actions .m_btn { width: 100%; justify-content: center; }
 
 @media (max-width: 768px) {
-  .top_slide-overlay,
-  .top_slide-overlay__circles,
-  .top_slide-overlay.top_slide-overlay__wood {
+  .top_hero__slides .top_slide-overlay,
+  .top_hero__slides .top_slide-overlay__circles,
+  .top_hero__slides .top_slide-overlay.top_slide-overlay__wood {
     background: radial-gradient(
       ellipse 96% 13% at 50% 16%,
       rgba(18, 64, 25, .52) 0%,
