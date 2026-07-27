@@ -1610,6 +1610,15 @@ h3, .h3 {
     -webkit-mask-image: radial-gradient(ellipse 96% 13% at 50% 16%, #000 0%, #000 40%, transparent 88%);
     mask-image: radial-gradient(ellipse 96% 13% at 50% 16%, #000 0%, #000 40%, transparent 88%);
   }
+  .top_hero_dyn-wrap .top_hero_actions {
+    left: var(--pad);
+    right: var(--pad);
+    width: auto;
+  }
+  .top_hero_dyn-wrap .top_hero_actions .m_btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .top_circle__lg, .top_circle__md, .top_circle__md2, .top_circle__sm { display: none; }
