@@ -1672,10 +1672,11 @@ h3, .h3 {
     margin-top: 40px;
   }
   .top_hero_dyn-wrap .top_hero_actions .m_btn {
-    width: auto;
-    padding: 28px 88px;
+    width: 380px;
+    padding: 28px 0;
     font-size: 22px;
-    min-width: 340px;
+    text-align: center;
+    justify-content: center;
   }
   .top_hero_dyn-wrap .top_hero_content { position: static; z-index: 1; max-width: 780px; }
   .top_hero_xl     { z-index: 1; }
